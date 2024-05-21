@@ -795,21 +795,21 @@ http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  40. oldal, 4. pont,
 
 http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  41. oldal, 1. pont
 
-## 123. Hány sora van az R ⋈ S lekérdezés eredményének, ha R metszet S = ø? (2 pont)
+## 123. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S = ø? (2 pont)
 
 **TODO**
 
 http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  41. oldal, 2.1.
 
-## 124. Hány sora van az R ⋈ S lekérdezés eredményének, ha R metszet S kulcs R-en? (2 pont)
+## 124. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S kulcs R-en? (2 pont)
 
 - a kimenet maximális mérete Ns
 
-## 125. Hány sora van az R ⋈ S lekérdezés eredményének, ha R metszet S idegen kulcs R-hez? (2 pont)
+## 125. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S idegen kulcs R-hez? (2 pont)
 
 - Ns
 
-## 126. Hány sora van az R ⋈ S lekérdezés eredményének, ha R metszet S = {A} sem R-nek, sem S-nek nem kulcsa? (2 pont)
+## 126. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S = {A} sem R-nek, sem S-nek nem kulcsa? (2 pont)
 
 - {A}, sem R-nek, sem S-nek nem kulcsa
 
@@ -819,7 +819,7 @@ nEquivalent to number of ways to parenthesize n-way joins
 
 nRecurrence: T(1) = 1
 
-T(n) = Σ T(i)T(n-i)
+T(n) = SIGMA_{T(i)T(n-i)}
 
 T(6) = 42
 
@@ -831,11 +831,11 @@ T(6) = 42
 
 ```
 nBestPlan(A,B,C,D,E) = min of (
-BestPlan(A,B,C,D) ⋈ E,
-BestPlan(A,B,C,E) ⋈ D,
-BestPlan(A,B,D,E) ⋈ C,
-BestPlan(A,C,D,E) ⋈ B,
-BestPlan(B,C,D,E) ⋈ A )
+BestPlan(A,B,C,D) |X| E,
+BestPlan(A,B,C,E) |X| D,
+BestPlan(A,B,D,E) |X| C,
+BestPlan(A,C,D,E) |X| B,
+BestPlan(B,C,D,E) |X| A )
 ```
 
 ## 130. Több-tagú összekapcsolás suboptimális sorrendjét milyen algoritmussal lehet előállítani, és a tartalmazási hálón milyen irányban halad a kiértékelés? (2 pont)
@@ -856,7 +856,7 @@ _feltéve, hogy Q,R,S paraméterei megegyeznek, Q.B-re és S.C-re klaszterindex�
 
 ## 133. Az R(A,B) JOIN S(B,C) lekérdezés eredményében mennyi a sorok száma? (2 pont)
 
-Tr ⋈ s = Tr*Ts/I (r, s alsóindexben lévő R, S)
+Tr |X| s = Tr*Ts/I (r, s alsóindexben lévő R, S)
 
 ## 134. Az R(A,B) JOIN S(B,C) lekérdezés eredménye hány blokkból áll? (2 pont)
 
@@ -1243,8 +1243,8 @@ Várakoztat, abortot rendel el, hogy a sorbarendezhetőséget biztosítsa.
 ## 193. Mit hívunk konfliktuspárnak? (2 pont)
 
 - A konfliktus (conflict) vagy konfliktuspár olyan egymást követő műveletpár az
-ütemezésben, amelynek ha a sorrendjét felcseréljük, akkor legalább az egyik
-tranzakció viselkedése megváltozhat.
+  ütemezésben, amelynek ha a sorrendjét felcseréljük, akkor legalább az egyik
+  tranzakció viselkedése megváltozhat.
 
 ## 194. Milyen 3 esetben nem cserélhetjük fel a műveletek sorrendjét, mert inkonzisztenciát okozhatna? (3 pont)
 
@@ -1322,7 +1322,7 @@ csúcsba akkor vezet irányított él, ha Ti <s Tj.
 ## 204. Milyen kapcsolat van a konfliktus-ekvivalencia és a megelőzési gráfok között? (4 pont)
 
 - S1, S2 konfliktusekvivalens => gráf(S1)=gráf(S2)
-- gráf(S1) = gráf(S2) ≠> S1, S2 konfliktusekvivalens
+- gráf(S1) = gráf(S2) =/=> S1, S2 konfliktusekvivalens
 
 ## 205. Adjunk példát arra, hogy két ütemezés megelőzési gráfja megegyezik, de nem konfliktus-ekvivalensek!(4 pont)
 
@@ -1391,7 +1391,7 @@ http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 39. oldal rajzzal együtt.
 ## 215. Mi a várakozási gráf és hogyan segít a holtpont felismerésében? (4 pont)
 
 A felismerésben segít a zárkérések sorozatához tartozó várakozási gráf: csúcsai
-a tranzakciók és akkor van él Tᵢ-ből Tj-be, ha Tᵢ vár egy olyan zár
+a tranzakciók és akkor van él Ti-ből Tj-be, ha Ti vár egy olyan zár
 elengedésére, amit Tj tart éppen. (j alsó indexben van)
 
 ## 216. Milyen két lehetőséggel védekezhetünk a holtpont ellen? (4 pont)
@@ -1542,13 +1542,13 @@ nem is léteztek. Az ilyen sorokat nevezzük fantomoknak (phantom).
 
 ## 237. Mikor követi egy tranzakció a faprotokollt? Adjuk meg a faprotokoll 4 szabályát! (4 pont)
 
-A Tᵢ tranzakció követi a faprotokollt, ha:
+A Ti tranzakció követi a faprotokollt, ha:
 
 1. Az első zárat bárhova elhelyezheti.
 2. A későbbiekben azonban csak akkor kaphat zárat A-n, ha ekkor zárja van A
    apján.
 3. Zárat bármikor fel lehet oldani (nem 2PL).
-4. Nem lehet újrazárolni, azaz ha Tᵢ elengedte egy A adategység zárját, akkor
+4. Nem lehet újrazárolni, azaz ha Ti elengedte egy A adategység zárját, akkor
    később nem kérhet rá újra (még akkor sem, ha A apján még megvan a zárja).
 
 ## 238. Hierarchiák, például B*-fa elemeinek zárolása esetén milyen feltétel adható az ütemezés sorbarendezhetőségére? (4 pont)
