@@ -26,7 +26,7 @@
 
 - `l` (_length_): rekordméret (bájtokban)
 - `b`: blokkméret (bájtokban)
-- `T` (tuple): rekordok száma 
+- `T` (_tuple_): rekordok száma 
 - `B`: a fájl mérete blokkokban
 - `bf`: blokkolási faktor
   - (mennyi rekord fér el egy blokkban: `bf = b/l alsó egészrésze`)
@@ -38,7 +38,7 @@
 ## 5. Adjuk meg RxS méretét blokkokban kifejezve! (2 pont)
 
 ```text
-B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b` =
+B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
        = (T(S) * T(R) * l(R)/b) + (T(R) * T(S) * l(S)/b) =
        = T(S) * B(R) + T(R) * B(S)
 ```
@@ -94,7 +94,7 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b` =
 
 ## 15. Mennyi az sA=a(R) lekérdezés keresési költsége jó hasító index esetén? (1 pont)
 
-- Ha elég a h(a) sorszámú kosarat végignézni, amely `B/K` blokkból álló kupacnak
+- Ha elég a `h(a)` sorszámú kosarat végignézni, amely `B/K` blokkból álló kupacnak
   felel meg, akkor legrosszabb esetben `B/K` a lekérdezés keresési költsége.
 
 ## 16. Ha túl nagynak választjuk a K-t hasításkor, akkor ez milyen problémát okozhat? (1 pont)
