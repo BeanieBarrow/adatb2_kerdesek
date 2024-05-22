@@ -2,252 +2,267 @@
 
 ## 1. Mit hívunk statikus, és mit dinamikus adatbázisnak? (1 pont) 
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 1. oldal
+- Statikus adatbázis:
+  - Ritkán módosul
+  - A lekérdezések gyorsasága a fontosabb
+- Dinamikus adatbázis:
+  - Gyakran módosul
+  - Ritkán végzünk lekérdezést
 
 ## 2. Fogalmazzunk meg 3 célt, amire az indexelés kiválasztásánál figyelni kell! (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 1. oldal
+- Keresési idő
+- Tárméret
+- Módosítási idő
+- Pl.: indexek használatával csökken a keresési idő, nő a tárméret, és nő a
+  módosítási idő
 
 ## 3. Mit tételezünk fel, mivel arányos a beolvasás, kiírás költsége? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 1. oldal
+- Feltételezzük, hogy a beolvasás, kiírás költsége arányos a háttértároló és
+  memória között mozgatott blokkok számával.
 
 ## 4. Adjuk meg az alábbi paraméterek jelentését! l, b, B, T, bf, M, I(A) (7 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 3, 5. oldal
+- `l` (_length_): rekordméret (bájtokban)
+- `b`: blokkméret (bájtokban)
+- `T` (tuple): rekordok száma 
+- `B`: a fájl mérete blokkokban
+- `bf`: blokkolási faktor
+  - (mennyi rekord fér el egy blokkban: `bf = b/l alsó egészrésze`)
+- `B = T/bf felső egészrésze`
+- `M`: memória mérete blokkokban
+- `I(A)`: képméret, az A oszlopban szereplő különböző értékek száma
+  - `I(A) = | PI_A (R) |`
 
 ## 5. Adjuk meg RxS méretét blokkokban kifejezve! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 3. oldal
+```text
+B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b` =
+       = (T(S) * T(R) * l(R)/b) + (T(R) * T(S) * l(S)/b) =
+       = T(S) * B(R) + T(R) * B(S)
+```
 
 ## 6. Mit jelent az egyenletességi feltétel? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 4.oldal
+- Fel szoktuk tenni, hogy az `A = a` feltételnek eleget tevő rekordokból
+  nagyjából egyforma számú rekord szerepel.
 
 ## 7. Mekkora adategységet olvas az író-olvasó fej? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 1. oldal
+- Az író-olvasó fej nagyobb adategységeket (blokkokat) olvas be.
 
 ## 8. Mitől függhet a blokkméret? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 1. oldal
+- A blokkméret maga fix
+- Adatbázis-kezelőtől, operációs rendszertől, hardvertől függ.
+- Oracle esetén 8K az alapértelmezés.
 
 ## 9. Egyenletességi feltétel esetén hány blokkból áll a sA=a(R) lekérdezés eredménye? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 5. oldal
+- `B(Sigma_A = a(R)) = B(R) / I(A)`
 
 ## 10. Soroljunk fel legalább 7 különböző fájlszervezési módszert? (7 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 5. oldal
+- Kupac (heap),
+- Hasító index (hash),
+- Rendezett állomány,
+- Elsődleges index (ritka index),
+- Másodlagos index (sűrű index),
+- Többszintű index,
+- B+-fa, B*-fa,
 
 ## 11. Kupac szervezés esetén mennyi a keresés költsége legrosszabb esetben? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 6. oldal
+- `A = a` keresési idő legrosszabb esetben `B`.
 
 ## 12. Kupac szervezés esetén mennyi a beszúrás költsége? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 6. oldal
+- Utolsó blokkba tesszük a rekordot, 1 olvasás + 1 írás
+- Módosítás: 1 keresés + 1 írás
+- Törlés: 1 keresés + 1 írás (üres hely marad, vagy a törlési bitet állítják át)
 
 ## 13. Mit mond meg a h(x) hasító függvény értéke? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 7. oldal
+- Egy `h(x) eleme {1, …, K}` hasító függvény értéke mondja meg, hogy melyik kosárba
+  tartozik a rekord, ha `x` volt az indexmező értéke a rekordban
 
 ## 14. Mikor jó egy hasító függvény és ilyenkor milyen hosszúak a blokkláncok? (2 pont)
 
-**TODO**
+- Akkor jó egy hasító függvény, ha nagyjából egyforma hosszú blokkláncok
+  keletkeznek, azaz egyenletesen sorolja be a rekordokat.
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 7. oldal
+## 15. Mennyi az sA=a(R) lekérdezés keresési költsége jó hasító index esetén? (1 pont)
 
-## 15. Mennyi asA=a(R) lekérdezés keresési költsége jó hasító index esetén? (1 pont)
-
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 8. oldal
+- Ha elég a h(a) sorszámú kosarat végignézni, amely `B/K` blokkból álló kupacnak
+  felel meg, akkor legrosszabb esetben `B/K` a lekérdezés keresési költsége.
 
 ## 16. Ha túl nagynak választjuk a K-t hasításkor, akkor ez milyen problémát okozhat? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 8. oldal
+- Nagy K esetén sok olyan blokklánc lehet, amely egy blokkból fog állni, és a
+  blokkban is csak 1 rekord lesz. Ekkor a keresési idő: 1 blokkbeolvasás, de B
+  helyett T számú blokkban tároljuk az adatokat.
 
 ## 17. Milyen keresésre nem jó a hasító indexelés? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 8. oldal
+- Intervallumos típusú (`a < A < b`) keresésre nem jó.
 
 ## 18. Mit jelent a dinamikus hasító indexelés és milyen két fajtáját ismerjük? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 11. oldal
+- Előre nem rögzítjük a kosarak számát.
+- A kosarak száma beszúráskor, törléskor változhat.
+- Fajtái:
+  - Kiterjeszthető hasító index
+  - Lineáris hasító index:
 
 ## 19. Kiterjeszthető hasítás esetén a h(K) érték alapján melyik kosárba kerül a rekord? (2 pont)
 
-**TODO**
+- A `h(K)` `k` hosszú kódnak vegyük az `i` hosszú elejét, és azt kosarat, amelynek
+  kódja a `h(K)` kezdő szelete. Ha van hely a kosárban, tegyük bele a rekordot,
+  ha nincs, akkor nyissunk egy új kosarat, és a következő bit alapján osszuk
+  ketté a telített kosár rekordjait. Ha ez a bit mindegyikre megegyezik, akkor
+  a következő bitet vesszük a szétosztáshoz, és így tovább.
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 11. oldal (utolsó bekezdés)
+## 20. Milyen probléma keletkezhet kiterjeszthető hasító index esetén és mi rá a megoldás? (2 pont)
 
-## 20. Milyen probléma keletkezhet kiterjeszthető hasító index esetén és mi rá a megoldás?(2 pont)
-
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 13. oldal (utolsó bekezdés)
-és 14. oldal (első bekezdés)
+-  Probléma:
+- Ha az új sorok hasító értékének eleje sok bitben megegyezik, akkor hosszú
+  ágak keletkezhetnek (nincs kiegyensúlyozva a fa).
+- Megoldás:
+  - A bináris gráfot teljessé is tehetjük. A gráfot egy tömbbel ábrázolhatjuk.
+    Ekkor minden kosár azonos szinten lesz, de közös blokkjai is lehetnek a
+    kosaraknak. Túlcsordulás esetén a kosarak száma duplázódik.
+  - Ábráért ld. http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 14. dia
 
 ## 21. Lineáris hasító index esetén mikor nyitunk meg új kosarat? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 17. oldal 
+- Új kosarat akkor nyitunk meg, ha egy előre megadott értéket elér a kosarakra
+  jutó átlagos rekordszám.
+- `(rekordok száma/kosarak száma > küszöb)`
 
 ## 22. Lineáris hasító index esetén a h(K) érték alapján melyik kosárba kerül a rekord? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 17. oldal (utolsó 2
-bekezdés)
+- Ha `n` kosarunk van, akkor a hasító függvény értékének utolsó `log(n)` bitjével
+  megegyező sorszámú kosárba tesszük, ha van benn hely. Ha nincs, akkor
+  hozzáláncolunk egy új blokkot és abba tesszük.
+- Ha nincs megfelelő sorszámú kosár, akkor abba a sorszámú kosárba tesszük,
+  amely csak az első bitjében különbözik a keresett sorszámtól.
 
 ## 23. Rendezett állomány esetén adjuk meg a bináris (logaritmikus) keresés lépéseit! (4 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 21. oldal (utolsó előtti
-bekezdés)
+- Ha a rendező mező és kereső mező egybeesik, akkor bináris (logaritmikus)
+  keresést lehet alkalmazni:
+  - Beolvassuk a középső blokkot,
+  - Ha nincs benne az `A = a` értékű rekord, akkor eldöntjük, hogy a blokklánc
+    második felében, vagy az első felében szerepelhet-e egyáltalán,
+  - Beolvassuk a felezett blokklánc középső blokkját,
+  - Addig folytatjuk, amíg megtaláljuk a rekordot, vagy a vizsgálandó maradék
+    blokklánc már csak 1 blokkból áll
 
 ## 24. Mennyi a keresési költség rendezett mező esetében? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 21. oldal (utolsó bekezdés)
+- `log_2(B)` (kettes alapú logaritmus `B`)
 
 ## 25. Mennyi a keresési költség rendezett mező esetében, ha gyűjtő blokkokat is használunk? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 22. oldal (utolsó előtti
-bekezdés)
+- Összköltség `log_2(B - G) + G` (Ha a gyűjtö blokkban találjuk meg)
+  - Egyébként: `log_2(B - G)`
+- Részletesebb leírás: http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 22. dia alja
 
 ## 26. Mennyi a keresési költség rendezett mező esetében, ha minden blokkot félig üresen hagyunk? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 23. oldal
+- `1 + log_2(B)`
 
 ## 27. Milyen mindig az indexrekord szerkezete? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 24. oldal
+- `(a, p)`, ahol `a` egy érték az indexelt oszlopban, `p` egy blokkmutató, arra
+  a blokkra mutat, amelyben az `A = a` értékű rekordot tároljuk.
+- Az index mindig rendezett az indexértékek szerint.
 
 ## 28. Adjuk meg az elsődleges index 5 jellemzőjét! (5 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 25. oldal (1. bekezdés, 5
-bajusz)
+- Főfájl is rendezett
+- Csak 1 elsődleges indexet lehet megadni (mert csak egyik mező szerint lehet
+  rendezett a főfájl.
+- Elég a főfájl minden blokkjának legkisebb rekordjához készíteni indexrekordot
+- Indexrekordok száma: `T(I) = B` (ritka index)
+- Indexrekordból sokkal több fér egy blokkba, mint a főfájl rekordjaiból:
+  `bf(I) >> bf`, azaz az indexfájl sokkal kisebb rendezett fájl, mint a főfájl: 
+- `B(I) = B / bf(I) << B = T / bf`
 
 ## 29. Mit hívunk fedőértéknek? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 25. oldal
+- A legnagyobb olyan indexérték, amely a keresett értéknél kisebb vagy egyenlő.
 
 ## 30. Mennyi a keresési költség elsődleges index esetén? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 25. oldal
+- `1 + log_2(B(I))`
 
 ## 31. Adjuk meg a másodlagos index 5 jellemzőjét! (5 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 33. oldal (1. bekezdés, első
-5 bajusz)
+- Főfájl rendezetlen (az indexfájl mindig rendezett)
+- Több másodlagos indexet is meg lehet adni 
+- A főfájl minden rekordjához kell készíteni indexrekordot
+- Indexrekordok száma: `T(I) = T` (sűrű index)
+- Indexrekordból sokkal több fér egy blokkba, mint a főfájl rekordjaiból:
+  `bf(I) >> bf`, azaz az indexfájl sokkal kisebb rendezett fájl, mint a főfájl:
+- `B(I) = T / bf(I) << B = T/bf`
 
 ## 32. Hogyan keresünk a másodlagos indexben és mennyi a keresés költsége? (5 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 33. oldal (2. bekezdés)
+- Az indexben keresés az index rendezettsége miatt bináris kereséssel történik:
+  `log_2(B(I))`
+- A talált indexrekordban szereplő blokkmutatónak megfelelő blokkot még be kell
+  olvasni
+- `1 + log_2(B(I)) << log_2(B)` (rendezett eset)  
+- Az elsődleges indexnél rosszabb a keresési idő, mert több az indexrekord
 
 ## 33. Mit hívunk klaszterszervezésű táblának? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 45. oldal (2. bekezdés)
+- Klaszter: nyaláb, fürt
+- Klaszterszervezés egy tábla esetén egy A oszlopra: 
+  - Az azonos A-értékű sorok fizikailag egymás utáni blokkokban helyezkednek el.
+  - CÉL: az első találat után az összes találatot megkapjuk soros beolvasással
 
 ## 34. Mit hívunk klaszterindexnek? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 45. oldal (3. bekezdés)
+- Klaszterszervezésű fájl esetén index az A oszlopra.
 
 ## 35. Mikor mondjuk, hogy 2 tábla klaszterszervezésű? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 45. oldal (4. bekezdés)
+- Klaszterszervezés két tábla esetén az összes közös oszlopra:
+  - A közös oszlopokon egyező sorok egy blokkban, vagy fizikailag egymás utáni
+    blokkokban helyezkednek el.
+  - CÉL: összekapcsolás esetén az összetartozó sorokat soros beolvasással
+    megkaphatjuk.
 
 ## 36. Ha t szintű indexet használunk, mennyi a keresési költség blokkműveletek számában mérve? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 47. oldal (piros képlet)
+- `log_2(B( I^(t) )) + t` db. blokkolvasás
+- Mi `t`? → ld. következő kérdés
 
 ## 37. Ha t szintű indexet használunk, a legfelső szinten milyen keresést használunk? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 47. oldal (2. bekezdés, 1.
-pont)
+- `t`: t-edik szinten `(I^t)` bináris kereéssel keressük meg a fedő indexrekordot.
 
 ## 38. Ha t szintű indexet használunk és a legfelső szint 1 blokkból áll, akkor mennyi a keresési költség? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 47. oldal (2. bekezdés, 3.
-pont)
+- Ha a legfelső szint 1 blokkból áll, akkor `t + 1` blokkolvasást jelent.
 
 ## 39. Ha t szintű indexet használunk, mennyi az indexszintek blokkolási faktora és miért? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 47. oldal (2. bekezdés, 4.
-pont)
+- Minden szint blokkolási faktora megegyezik, mert egyforma hosszúak az
+  indexrekordok.
 
 ## 40. Ha t szintű indexet használunk, vezessük le, hogy hány blokkból áll a legfelső szint! (12 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 48. oldal (táblázat)
+- Főfájl: `B`
+  - I. szint: `B / bf(I)`
+  - II. szint: `B / bf(I)^2`
+  - …
+  - t. szint: `B / bf(I)^t`
+- Pl., ha `t`-edik szinten 1 blokk: `1 = B / bf(I)`
+- ld. bővebben http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 48. oldal (táblázat)
 
 ## 41. Ha t szintű indexet használunk, és a legfelső szint 1 blokkból áll, abból milyen egyenlet következik és mi a megoldása t-re? (2 pont)
 
@@ -1302,7 +1317,7 @@ műveleteket végrehajtó tranzakcióknak ugyanabban a sorrendben kell
 előfordulniuk a konfliktus-ekvivalens soros ütemezésekben, mint ahogyan az
 S-ben voltak.
 
-## 202. Mikor mondjuk, hogy egy S ütemezés alapján T1 megelőzi T2-t?(5 pont)
+## 202. Mikor mondjuk, hogy egy S ütemezés alapján T1 megelőzi T2-t? (5 pont)
 
 Adott a T1 és T2, esetleg további tranzakcióknak egy S ütemezése. Azt mondjuk,
 hogy T1 megelőzi T2‑t, ha van a T1-ben olyan A1 művelet és a T2-ben olyan A2
