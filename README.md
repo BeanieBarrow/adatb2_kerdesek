@@ -8,7 +8,7 @@ Használd a [pandoc](https://pandoc.org/)-ot, telepítsd, ha nincs meg, nyiss a
 `kerdesek.md` könyvtárában egy parancssort, és add ki ezen parancsok egyikét:
 
 ```bash
-pandoc kerdesek.md -o kerdesek.pdf -V geometry:margin=1in
+pandoc --pdf-engine=xelatex -V "mainfont:DejaVu Sans" -V "monofont:DejaVu Sans Mono" kerdesek.md -o kerdesek.pdf
 ```
 
 Vagy:
