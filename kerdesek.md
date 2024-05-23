@@ -381,293 +381,246 @@ WHERE MARITAL_STATUS = 'married' AND
 
 ## 54. Adjuk meg egy egyszerű relációs algebrai kifejezést és gráfos ábrázolását! (4 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 95. oldal (A kifejezés
-és a gráf)
+![54. kérdés, algebrai opt.ppt, 95. dia](./images/54.png)
 
 ## 55. Milyen költségmodellt használunk relációs algebrai optimalizálás esetében? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 106. oldal
-(Költségmodell)
+- A kiszámítás költsége arányos a relációs algebrai kifejezés részkifejezéseinek megfelelő relációk tárolási méreteinek összegével
 
 ## 56. Mi a módszer lényege relációs algebrai optimalizálás esetében? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 106. oldal (Módszer)
+- A műveleti tulajdonságokon alapuló ekvivalens átalakításokat alkalmazunk, hogy várhatóan kisebb méretű relációk keletkezzenek
 
 ## 57. Miért mondjuk, hogy az eljárás heurisztikus relációs algebrai optimalizálás esetén? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 106. oldal (4. pont)
+- Azért, mert nem az argumentum relációk valódi méretével számol
 
 ## 58. Miért nem egyértelmű az eredmény relációs algebrai optimalizálás esetén? (4 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 106. oldal (4. pont)
+- Az átalakítások sorrendje nem determinisztikus, így más sorrendben
+végrehajtva az átalakításokat más végeredményt kaphatunk,
+de mindegyik általában jobb költségű, mint amiből kiindultunk
 
 ## 59. A relációs algebrai kifejezésfában melyek az unáris csúcsok? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 107. oldal (unáris
-csúcsok felsorolása)
+- &sigma;: kiválasztás
+- &Pi;: vetítés
+- &rho;: átnevezés
 
 ## 60. A relációs algebrai kifejezésfában melyek a bináris csúcsok? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 107. oldal (bináris
-csúcsok felsorolása)
+- -: kivonás
+- &cup;: unió
+- x: szorzás
 
 ## 61. A relációs algebrai kifejezésfában mik a levélcsúcsok? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 107. oldal (kétféle
-lehet)
+- Konstans relációk vagy relációs változók
 
 ## 62. Mit hívunk ekvivalens relációs algebrai kifejezéseknek? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 110. oldal (1. pont)
+- E1(r1,...,rk) és E2(r1,...,rk) relációs algebrai kifejezések ekvivalensek (E1 ~= E2), ha tetszőleges r1,...,rk relációkat véve E1(r1,...,rk) ~= E2(r1,...,rk)
 
 ## 63. Hány szabálycsoportot adunk meg relációs algebrai optimalizáláskor és mi jellemző ezekre? (4 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 110. oldal (2. és 3.
-pont, összesen 4 mondat)
+- 11 szabálycsoport
+  - kifejezések ekvivalenciáját megfogalmazó állítások
+  - bizonyításuk könnyen végiggondolható
+  - az állítások egy részében a kifejezések szintaktikus helyessége egyben elégséges feltétele is az ekvivalenciának
 
 ## 64. Adjuk meg a relációs algebrai optimalizálás kommutatív szabályait! (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 110. oldal (3 szabály)
+- E1 x E2 ~= E2 x E1
+- E1 |x| E2 ~= E2 |x| E1
+- E1 |x|<sub>&theta;</sub> E2 ~= E2 |x|<sub>&theta;</sub> E1
 
 ## 65. Adjuk meg a relációs algebrai optimalizálás asszociatív szabályait! (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 111. oldal (3 szabály)
+- (E1 x E2) x E3 ~= E1 x (E2 x E3)
+- (E1 |x| E2) |x| E3 ~= E1 |x| (E2 |x| E3)
+- (E1 |x|<sub>&theta;</sub> E2) |x|<sub>&theta;</sub> E3 ~= E1 |x|<sub>&theta;</sub> (E2 |x|<sub>&theta;</sub> E3)
 
 ## 66. Adjuk meg a vetítésre vonatkozó összevonási, bővítés szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 111. oldal (szabály és
-feltétel)
+- Legyen A és B két részhalmaza az E reláció oszlopainak úgy, hogy A &subseteq; B
+- &Pi;<sub>A</sub>(&Pi;<sub>B</sub>(E)) ~= &Pi;<sub>A</sub>(E)
 
 ## 67. Adjuk meg a kiválasztások felcserélhetőségére, felbontására vonatkozó szabályt relációs algebrai optimalizálás esetén! (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 111. oldal (2
-ekvivalencia és feltétel)
+- Legyen F1 és F2 az E reláció oszlopain értelmezett kiválasztási feltétel
+- &sigma;<sub>F1&and;F2</sub>(E) ~= &sigma;<sub>F1</sub>(&sigma;<sub>F2</sub>(E)) ~= &sigma;<sub>F2</sub>(&sigma;<sub>F1</sub>(E))
 
 ## 68. Adjuk meg a kiválasztás és vetítés felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 112. oldal (az a)
-szabály és feltétele)
+- Legyen F az E relációnak csak az A oszlopain értelmezett kiválasztási feltétel
+- &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(E)) ~= &sigma;<sub>F</sub>(&Pi;<sub>A</sub>(E))
 
 ## 69. Adjuk meg a kiválasztás és vetítés felcserélhetőségére vonatkozó általánosított szabályt rel. algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 112. oldal (a b)
-szabály és feltétele)
+- Általánosabban: Legyen F az E relációnak csak az A&cup;B oszlopain értelmezett kiválasztási feltétel, ahol A&cap;B = &empty;
+- &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(E)) ~= &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(&Pi;<sub>A&cup;B</sub>(E)))
 
 ## 70. Adjuk meg a kiválasztás és szorzás felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 112. oldal (a szabály
-és feltétele)
+- Legyen F az E1 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel
+- &sigma;<sub>F</sub>(E1 x E2) ~= &sigma;<sub>F</sub>(E1) x E2
 
 ## 71. Adjuk meg a kiválasztás és szorzás felcserélhetőségére vonatkozó speciális szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 112. oldal (a speciális
-szabály és feltétele)
+- Legyen i=1,2 esetén Fi az Ei reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel, legyen továbbá F=F1&and;F2
+- &sigma;<sub>F</sub>(E1 x E2) ~= &sigma;<sub>F1</sub>(E1) x &sigma;<sub>F2</sub>(E2)
 
 ## 72. Adjuk meg a kiválasztás és szorzás felcserélhetőségére vonatkozó általánosított szabályt rel. algebrai optimalizálás esetén! (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 112. oldal (az
-általános szabály és feltételei)
+- Legyen F1 az E1 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel, legyen F2 az E1E2 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel, úgy hogy mindkét sémából legalább egy oszlop szerepel benne, legyen továbbá F=F1&and;F2
+- &sigma;<sub>F</sub>(E1 x E2) ~= &sigma;<sub>F2</sub>(&sigma;<sub>F1</sub>(E1) x E2)
 
 ## 73. Adjuk meg a kiválasztás és egyesítés felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 113. oldal (a szabály
-és feltétele)
+- Legyen E1, E2 relációk sémája megegyező, és F a közös sémán értelmezett kiválasztási feltétel
+- &sigma;<sub>F</sub>(E1 &cup; E2) ~= &sigma;<sub>F</sub>(E1) &cup; &sigma;<sub>F</sub>(E2)
+- Kivonásra ugyan ez, de nincs rá külön kérdés
 
 ## 74. Adjuk meg a kiválasztás és természetes összekapcsolás felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 113. oldal (a szabály
-és feltétele)
+- Legyen F az E1 és E2 közös oszlopainak egy részhalmazán értelmezett kiválasztási feltétel
+- &sigma;<sub>F</sub>(E1 |x| E2) ~= &sigma;<sub>F</sub>(E1) |x| &sigma;<sub>F</sub>(E2)
 
 ## 75. Adjuk meg a vetítés és szorzás felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 114. oldal (a szabály
-és feltétele)
+- Legyen i=1,2 esetén Ai az Ei reláció oszlopainak egy halmaza, valamint legyen A=A1&cup;A2
+- &Pi;<sub>A</sub>(E1 x E2) ~= &Pi;<sub>A1</sub>(E1) x &Pi;<sub>A2</sub>(E2)
 
 ## 76. Adjuk meg a vetítés és egyesítés felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 114. oldal (a szabály
-és feltétele)
+- Legyen E1 és E2 relációk sémája megegyező, és legyen A a sémában szereplő oszlopok egy részhalmaza
+- &Pi;<sub>A</sub>(E1 &cup; E2) ~= &Pi;<sub>A1</sub>(E1) &cup; &Pi;<sub>A2</sub>(E2)
 
 ## 77. Mutassunk példát, hogy a kivonás és a vetítés nem felcserélhető! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 114. oldal (a
-megjegyzésben leírt példa)
+- &Pi;<sub>A</sub>(E1 - E2) ~= &Pi;<sub>A1</sub>(E1) - &Pi;<sub>A2</sub>(E2)
+- E1:
+  | A | B |
+  | - | - |
+  | 0 | 0 |
+  | 0 | 1 |
+- E2:
+  | A | B |
+  | - | - |
+  | 0 | 0 |
+- &Pi;<sub>A</sub>(E1 - E2) =
+  | A |
+  | - |
+  | 0 |
+- &Pi;<sub>A1</sub>(E1) - &Pi;<sub>A2</sub>(E2) = &empty;
 
 ## 78. Fogalmazzuk meg a relációs algebrai optimalizálás 4 heurisztikus elvét! (4 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 115. oldal (Vastagon
-szedett mondatok)
+- Minél hamarabb szelektáljunk
+- Próbáljunk természetes összekapcsolásokat képezni
+- Vonjuk össze az egymás utáni unáris műveleteket
+- Keressünk közös részkifejezéseket
 
 ## 79. Miért érdemes hamarabb szelektálni relációs algebrai optimalizálás esetén? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 115. oldal (1. pont)
+- Így a részkifejezések várhatóan kisebb relációk lesznek
 
 ## 80. Miért érdemes természetes összekapcsolásokat képezni szorzások helyett relációs algebrai optimalizálás esetén? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 115. oldal (2. pont)
+- Mert az összekapcsolás hatékonyabban kiszámolható, mint a szorzatból történő kiválasztás
 
 ## 81. Miért érdemes az unáris műveleteket összevonni relációs algebrai optimalizálás esetén? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 115. oldal (3. pont)
+- Így csökken a műveletek száma, és általában a kiválasztás kisebb relációt eredményez, mint a vetítés
 
 ## 82. Miért érdemes a közös részkifejezéseket megkeresni relációs algebrai optimalizálás esetén? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 115. oldal (4. pont)
+- Ezeket így elég csak egyszer kiszámolni a kifejezés kiértékelése során
 
 ## 83. A relációs algebrai optimalizálás algoritmusának mi az inputja és mi az outputja? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 116. oldal (input,
-output)
+- INPUT: relációs algebrai kifejezés kifejezésfája
+- OUTPUT: optimalizált kifejezésfa optimalizált kiértékelése
 
 ## 84. Mi a relációs algebrai optimalizálás algoritmusának 1. lépése (az alkalmazott szabályok felsorolása nélkül)? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 116. oldal (1. lépés)
+- A kiválasztások felbontása
 
 ## 85. Mi a relációs algebrai optimalizálás algoritmusának 2. lépése (az alkalmazott szabályok felsorolása nélkül)? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 116. oldal (2. lépés)
+- A kiválasztások minél mélyebbre vitele
 
 ## 86. Mi a relációs algebrai optimalizálás algoritmusának 3. lépése (az alkalmazott szabályok felsorolása nélkül)? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 116. oldal (3. lépés)
+- A vetítések minél mélyebbre vitele
 
 ## 87. Mi a relációs algebrai optimalizálás algoritmusának 4. lépése (az alkalmazott szabályok felsorolása nélkül)? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 116. oldal (4. lépés)
+- Egymás utáni kiválasztások / vetítések összevonása
+- Lehetőleg kiválasztás utáni vetítéssé &Pi;(&sigma;(.))
+- Eredmény: optimalizált kifejezésfa
 
 ## 88. Mi a relációs algebrai optimalizálás algoritmusának 5. lépése (az alkalmazott szabályok felsorolása nélkül)? (4 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 116. oldal (5. lépés)
+- A gráf bináris műveletek alapján való részgráfokra bontása
+- Egy részgráf: egy bináris művelet
 
 ## 89. Mi a relációs algebrai optimalizálás algoritmusának 6. lépése (az alkalmazott szabályok felsorolása nélkül)? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 116. oldal (6. lépés)
+- Az előző lépésben kapott részgráfok is fát alkotnak
+- Ennek a fának az alulról felfele haladó, tetszőleges sorrendű kiértékelése
 
 ## 90. Adjunk meg egy példát, amiben a vetítések bővítése trükköt alkalmazzuk és indokoljuk, hogy mire jó ez! (8 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 122. oldal (a teljes
-ábra)
+![90. kérdés, algebrai opt.ppt, 122. dia](./images/90.png)
+- A bővítésből kapott vetítéseket mélyebbre tudjuk vinni a fában, mint az eredeti vetítést
 
 ## 91. Mennyi az SC(A,R) szelektivitás értéke, ha A kulcs? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization.ppt 11. oldal 
+- SC(A,R) = 1, ha A kulcs
 
 ## 92. Mennyi az SC(A,R) szelektivitás értéke, ha A nem kulcs (a jelölések magyarázatát is adjuk meg)? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization.ppt 11. oldal
+- SC(A,R) = N<sub>R</sub> / V(A,R)
+  - N<sub>R</sub>: rekordok száma R-ben
+  - V(A,R): A attribútum egyedi értékeinek száma R-ben
 
 ## 93. Mennyi rendezett táblában a bináris keresés átlagos költsége, ha minden találatot be kell olvasni (a jelölések magyarázatát is adjuk meg)? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization.ppt  13. oldal (bináris
-átlagos költség, m-re a képlet)
+- \|log<sub>2</sub> B<sub>R</sub>\| + m
+  - m: a többlet beolvasandó oldalak száma (additional pages to be read)
+  - m = ceil( SC(A,R) / F<sub>R</sub> ) - 1
+    - F<sub>R</sub>: blokkolási tényező, rekordok száma egy oldalon
 
 ## 94. Mennyi B+-fa típusú elsődleges index esetén az átlagos keresési költség, ha minden találatot be kell olvasni (a jelölések magyarázatát is adjuk meg)? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization.ppt 13. oldal (a legutolsó
-pont)
+- HT<sub>i</sub> + ceil( SC(A,R)/F<sub>R</sub> )
+  - HT<sub>i</sub>: szintek száma I indexben
+  - F<sub>R</sub>: blokkolási tényező, rekordok száma egy oldalon
 
 ## 95. Mennyi B+-fa típusú másodlagos index esetén az átlagos keresési költség, ha minden találatot be kell olvasni (a jelölések magyarázatát is adjuk meg)? (2 pont)
 
-**TODO**
+- Kulcs mező: HT<sub>i</sub> + 1
+- Nem kulcs mező
+  - legrosszabb eset: HT<sub>i</sub> + SC(A,R)
+  - a lineáris keresés kedvezőbb, ha sok a megfelelő rekord
 
-http://people.inf.elte.hu/kiss/15ab2/optimization.ppt 14. oldal (a
-szelektivitást tartalmazó képlet)
+## 96. A &sigma;<sub>&theta;<sub>1</sub>&and;&theta;<sub>2</sub>&and;...&and;&theta;<sub>n</sub></sub> lekérdezésnek adjuk meg kétféle kiszámítási módját! (6 pont)
 
-## 96. A **ld. hivatalos docx fájl** lekérdezésnek adjuk meg kétféle kiszámítási módját! (6 pont)
+- Konjunkciós lekérdezésnek hívják
+- végezzünk egyszerű kiválasztást a legkisebb költségű &theta;<sub>i</sub>-re
+  - a fennmaradó &theta; feltételek szerint szűrjük az eredményt
+- több index
+  - válasszuk ki a &theta;<sub>i</sub>-khez tartozó indexeket
+  - keressünk az indexekben és adjuk vissza a RID-ket
+  - válasz: RID-k metszete
 
-**TODO**
+## 97. A &sigma;<sub>&theta;<sub>1</sub>&or;&theta;<sub>2</sub>&or;...&or;&theta;<sub>n</sub></sub> lekérdezésnek adjuk meg kétféle kiszámítási módját! (3 pont)
 
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt 15. oldal, 1. bajusz
-és 2. pötty, 2. bajusz és első három pötty
-
-## 97. A **ld. hivatalos docx fájl** lekérdezésnek adjuk meg kétféle kiszámítási módját! (3 pont)
-
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt 15. oldal, a
-diszjunkciós kiválasztás alatti 3 sor
+- Diszjunkciós lekérdezésnek hívják
+- több index
+  - RID-k uniója
+- lineáris keresés
 
 ## 98. Milyen adatbázis műveletekhez kell rendezés? (5 pont)
 
@@ -678,9 +631,8 @@ bajusz
 
 ## 99. Milyen két fajtája van a rendezésnek? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  17. oldal, 3.1. 3.2
+- belső rendezés (ha a rekordok beférnek a memóriába)
+- külső rendezés
 
 ## 100. Külső összefésülő rendezésnél mire jó a rendező lépés? (1 pont)
 
