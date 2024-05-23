@@ -385,11 +385,13 @@ WHERE MARITAL_STATUS = 'married' AND
 
 ## 55. Milyen költségmodellt használunk relációs algebrai optimalizálás esetében? (2 pont)
 
-- A kiszámítás költsége arányos a relációs algebrai kifejezés részkifejezéseinek megfelelő relációk tárolási méreteinek összegével
+- A kiszámítás költsége arányos a relációs algebrai kifejezés
+  részkifejezéseinek megfelelő relációk tárolási méreteinek összegével
 
 ## 56. Mi a módszer lényege relációs algebrai optimalizálás esetében? (3 pont)
 
-- A műveleti tulajdonságokon alapuló ekvivalens átalakításokat alkalmazunk, hogy várhatóan kisebb méretű relációk keletkezzenek
+- A műveleti tulajdonságokon alapuló ekvivalens átalakításokat alkalmazunk,
+  hogy várhatóan kisebb méretű relációk keletkezzenek
 
 ## 57. Miért mondjuk, hogy az eljárás heurisztikus relációs algebrai optimalizálás esetén? (2 pont)
 
@@ -398,8 +400,8 @@ WHERE MARITAL_STATUS = 'married' AND
 ## 58. Miért nem egyértelmű az eredmény relációs algebrai optimalizálás esetén? (4 pont)
 
 - Az átalakítások sorrendje nem determinisztikus, így más sorrendben
-végrehajtva az átalakításokat más végeredményt kaphatunk,
-de mindegyik általában jobb költségű, mint amiből kiindultunk
+  végrehajtva az átalakításokat más végeredményt kaphatunk, de mindegyik
+  általában jobb költségű, mint amiből kiindultunk
 
 ## 59. A relációs algebrai kifejezésfában melyek az unáris csúcsok? (3 pont)
 
@@ -419,14 +421,17 @@ de mindegyik általában jobb költségű, mint amiből kiindultunk
 
 ## 62. Mit hívunk ekvivalens relációs algebrai kifejezéseknek? (3 pont)
 
-- E1(r1,...,rk) és E2(r1,...,rk) relációs algebrai kifejezések ekvivalensek (E1 ~= E2), ha tetszőleges r1,...,rk relációkat véve E1(r1,...,rk) ~= E2(r1,...,rk)
+- E1(r1,...,rk) és E2(r1,...,rk) relációs algebrai kifejezések ekvivalensek (E1
+  ~= E2), ha tetszőleges r1,...,rk relációkat véve E1(r1,...,rk) ~=
+  E2(r1,...,rk)
 
 ## 63. Hány szabálycsoportot adunk meg relációs algebrai optimalizáláskor és mi jellemző ezekre? (4 pont)
 
 - 11 szabálycsoport
   - kifejezések ekvivalenciáját megfogalmazó állítások
   - bizonyításuk könnyen végiggondolható
-  - az állítások egy részében a kifejezések szintaktikus helyessége egyben elégséges feltétele is az ekvivalenciának
+  - az állítások egy részében a kifejezések szintaktikus helyessége egyben
+    elégséges feltétele is az ekvivalenciának
 
 ## 64. Adjuk meg a relációs algebrai optimalizálás kommutatív szabályait! (3 pont)
 
@@ -438,53 +443,70 @@ de mindegyik általában jobb költségű, mint amiből kiindultunk
 
 - (E1 x E2) x E3 ~= E1 x (E2 x E3)
 - (E1 |x| E2) |x| E3 ~= E1 |x| (E2 |x| E3)
-- (E1 |x|<sub>&theta;</sub> E2) |x|<sub>&theta;</sub> E3 ~= E1 |x|<sub>&theta;</sub> (E2 |x|<sub>&theta;</sub> E3)
+- (E1 |x|<sub>&theta;</sub> E2) |x|<sub>&theta;</sub> E3 ~= E1
+  |x|<sub>&theta;</sub> (E2 |x|<sub>&theta;</sub> E3)
 
 ## 66. Adjuk meg a vetítésre vonatkozó összevonási, bővítés szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-- Legyen A és B két részhalmaza az E reláció oszlopainak úgy, hogy A &subseteq; B
+- Legyen A és B két részhalmaza az E reláció oszlopainak úgy, hogy A &subseteq;
+  B
 - &Pi;<sub>A</sub>(&Pi;<sub>B</sub>(E)) ~= &Pi;<sub>A</sub>(E)
 
 ## 67. Adjuk meg a kiválasztások felcserélhetőségére, felbontására vonatkozó szabályt relációs algebrai optimalizálás esetén! (3 pont)
 
 - Legyen F1 és F2 az E reláció oszlopain értelmezett kiválasztási feltétel
-- &sigma;<sub>F1&and;F2</sub>(E) ~= &sigma;<sub>F1</sub>(&sigma;<sub>F2</sub>(E)) ~= &sigma;<sub>F2</sub>(&sigma;<sub>F1</sub>(E))
+- &sigma;<sub>F1&and;F2</sub>(E) ~=
+  &sigma;<sub>F1</sub>(&sigma;<sub>F2</sub>(E)) ~=
+  &sigma;<sub>F2</sub>(&sigma;<sub>F1</sub>(E))
 
 ## 68. Adjuk meg a kiválasztás és vetítés felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
 - Legyen F az E relációnak csak az A oszlopain értelmezett kiválasztási feltétel
-- &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(E)) ~= &sigma;<sub>F</sub>(&Pi;<sub>A</sub>(E))
+- &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(E)) ~=
+  &sigma;<sub>F</sub>(&Pi;<sub>A</sub>(E))
 
 ## 69. Adjuk meg a kiválasztás és vetítés felcserélhetőségére vonatkozó általánosított szabályt rel. algebrai optimalizálás esetén! (2 pont)
 
-- Általánosabban: Legyen F az E relációnak csak az A&cup;B oszlopain értelmezett kiválasztási feltétel, ahol A&cap;B = &empty;
-- &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(E)) ~= &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(&Pi;<sub>A&cup;B</sub>(E)))
+- Általánosabban: Legyen F az E relációnak csak az A&cup;B oszlopain
+  értelmezett kiválasztási feltétel, ahol A&cap;B = &empty;
+- &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(E)) ~=
+  &Pi;<sub>A</sub>(&sigma;<sub>F</sub>(&Pi;<sub>A&cup;B</sub>(E)))
 
 ## 70. Adjuk meg a kiválasztás és szorzás felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-- Legyen F az E1 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel
+- Legyen F az E1 reláció oszlopainak egy részhalmazán értelmezett kiválasztási
+  feltétel
 - &sigma;<sub>F</sub>(E1 x E2) ~= &sigma;<sub>F</sub>(E1) x E2
 
 ## 71. Adjuk meg a kiválasztás és szorzás felcserélhetőségére vonatkozó speciális szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-- Legyen i=1,2 esetén Fi az Ei reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel, legyen továbbá F=F1&and;F2
-- &sigma;<sub>F</sub>(E1 x E2) ~= &sigma;<sub>F1</sub>(E1) x &sigma;<sub>F2</sub>(E2)
+- Legyen i=1,2 esetén Fi az Ei reláció oszlopainak egy részhalmazán értelmezett
+  kiválasztási feltétel, legyen továbbá F=F1&and;F2
+- &sigma;<sub>F</sub>(E1 x E2) ~= &sigma;<sub>F1</sub>(E1) x
+  &sigma;<sub>F2</sub>(E2)
 
 ## 72. Adjuk meg a kiválasztás és szorzás felcserélhetőségére vonatkozó általánosított szabályt rel. algebrai optimalizálás esetén! (3 pont)
 
-- Legyen F1 az E1 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel, legyen F2 az E1E2 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel, úgy hogy mindkét sémából legalább egy oszlop szerepel benne, legyen továbbá F=F1&and;F2
-- &sigma;<sub>F</sub>(E1 x E2) ~= &sigma;<sub>F2</sub>(&sigma;<sub>F1</sub>(E1) x E2)
+- Legyen F1 az E1 reláció oszlopainak egy részhalmazán értelmezett kiválasztási
+  feltétel, legyen F2 az E1xE2 reláció oszlopainak egy részhalmazán értelmezett
+  kiválasztási feltétel, úgy hogy mindkét sémából legalább egy oszlop szerepel
+  benne, legyen továbbá F=F1&and;F2
+- &sigma;<sub>F</sub>(E1 x E2) ~= &sigma;<sub>F2</sub>(&sigma;<sub>F1</sub>(E1)
+  x E2)
 
 ## 73. Adjuk meg a kiválasztás és egyesítés felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
 - Legyen E1, E2 relációk sémája megegyező, és F a közös sémán értelmezett kiválasztási feltétel
-- &sigma;<sub>F</sub>(E1 &cup; E2) ~= &sigma;<sub>F</sub>(E1) &cup; &sigma;<sub>F</sub>(E2)
+- &sigma;<sub>F</sub>(E1 &cup; E2) ~= &sigma;<sub>F</sub>(E1) &cup;
+  &sigma;<sub>F</sub>(E2)
 - Kivonásra ugyan ez, de nincs rá külön kérdés
 
 ## 74. Adjuk meg a kiválasztás és természetes összekapcsolás felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-- Legyen F az E1 és E2 közös oszlopainak egy részhalmazán értelmezett kiválasztási feltétel
-- &sigma;<sub>F</sub>(E1 |x| E2) ~= &sigma;<sub>F</sub>(E1) |x| &sigma;<sub>F</sub>(E2)
+- Legyen F az E1 és E2 közös oszlopainak egy részhalmazán értelmezett
+  kiválasztási feltétel
+- &sigma;<sub>F</sub>(E1 |x| E2) ~= &sigma;<sub>F</sub>(E1) |x|
+  &sigma;<sub>F</sub>(E2)
 
 ## 75. Adjuk meg a vetítés és szorzás felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
@@ -494,7 +516,8 @@ de mindegyik általában jobb költségű, mint amiből kiindultunk
 ## 76. Adjuk meg a vetítés és egyesítés felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
 - Legyen E1 és E2 relációk sémája megegyező, és legyen A a sémában szereplő oszlopok egy részhalmaza
-- &Pi;<sub>A</sub>(E1 &cup; E2) ~= &Pi;<sub>A1</sub>(E1) &cup; &Pi;<sub>A2</sub>(E2)
+- &Pi;<sub>A</sub>(E1 &cup; E2) ~= &Pi;<sub>A1</sub>(E1) &cup;
+  &Pi;<sub>A2</sub>(E2)
 
 ## 77. Mutassunk példát, hogy a kivonás és a vetítés nem felcserélhető! (2 pont)
 
@@ -527,11 +550,13 @@ de mindegyik általában jobb költségű, mint amiből kiindultunk
 
 ## 80. Miért érdemes természetes összekapcsolásokat képezni szorzások helyett relációs algebrai optimalizálás esetén? (1 pont)
 
-- Mert az összekapcsolás hatékonyabban kiszámolható, mint a szorzatból történő kiválasztás
+- Mert az összekapcsolás hatékonyabban kiszámolható, mint a szorzatból történő
+  kiválasztás
 
 ## 81. Miért érdemes az unáris műveleteket összevonni relációs algebrai optimalizálás esetén? (1 pont)
 
-- Így csökken a műveletek száma, és általában a kiválasztás kisebb relációt eredményez, mint a vetítés
+- Így csökken a műveletek száma, és általában a kiválasztás kisebb relációt
+  eredményez, mint a vetítés
 
 ## 82. Miért érdemes a közös részkifejezéseket megkeresni relációs algebrai optimalizálás esetén? (1 pont)
 
