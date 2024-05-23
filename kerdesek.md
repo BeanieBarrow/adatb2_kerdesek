@@ -261,100 +261,123 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
   - II. szint: `B / bf(I)^2`
   - …
   - t. szint: `B / bf(I)^t`
-- Pl., ha `t`-edik szinten 1 blokk: `1 = B / bf(I)`
-- ld. bővebben http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 48. oldal (táblázat)
+- ld. bővebben http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 48. oldal
+  (táblázat)
 
 ## 41. Ha t szintű indexet használunk, és a legfelső szint 1 blokkból áll, abból milyen egyenlet következik és mi a megoldása t-re? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 48. oldal (táblázat alatti 1
-pont)
+- Ha `t`-edik szinten 1 blokk: `1 = B / bf(I)`
+- Azaz `t = log_{bf(I)}(B) < log_2(B)`
 
 ## 42. Mi a két legfontosabb jellemzője a B+-faindexnek? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 49. oldal (telítettségre és
-algoritmusokra utaló mondatok)
+- Minden blokk legalább 50%-ban telített
+- A szerkezeten kívül a telítettséget biztosító karbantartó algoritmusokat is
+  beleértjük
 
 ## 43. Egy példa alapján szemléltessük a köztes csúcs jellemzőit B+-fa index esetén! (8 pont)
 
-**TODO**
+- Köztes (nem-levél) csúcs szerkezete:
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 50. oldal (minden, ami
-szerepel rajta)
+```text
+     ┌───────────────────────────┐  
+     │                           │  
+     │                           │  
+  ┌╶╶╶╶ 57╶╶╶╶┐    81╶╶╶┐    95╶╶╶╶┐
+  ╎  │        ╎         ╎        │ ╎  
+  ╎  │        ╎         ╎        │ ╎  
+  ╎  └────────╎─────────╎────────┘ ╎  n+1 mutató
+  ↓           ↓         ╎          ╎  n indexérték
+k < 57   57 ≤ k < 81    ╎          ╎  
+                        ╎          ╎  
+                        ↓          ╎  
+                   81 ≤ k < 95     ╎  
+                                   ╎  
+                                   ↓  
+                                95 ≤ k  
+```
+
+- Ahol `k` a mutató által meghatározott részben (részgráfban) szereplő
+  tetszőleges indexérték
 
 ## 44. Egy példa alapján szemléltessük a levél csúcs jellemzőit B+-fa index esetén! (5 pont)
 
-**TODO**
+- Levél csúcs szerkezete:
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 51. oldal (minden, ami
-szerepel rajta)
+```text
+             ┌╶╶╶╶╶╶Köztes csúcs               
+             ╎                                 
+             ↓                                 
+ ┌───────────────────────────┐     A sorrendben
+ │                         ╶╶╶╶╶╶→ következő   
+ │                           │     levél       
+ │  57         81        95  │                 
+ │  ╎          ╎         ╎   │                 
+ │  ╎          ╎         ╎   │                 
+ └──╎──────────╎─────────╎───┘                 
+    ╎          ╎         ╎                     
+    ↓          ↓         ↓                     
+ 57 index-  81 index- 95 index-                
+ értékű     értékű    értékű                   
+ rekord     rekord    rekord                   
+
+```
 
 ## 45. Mutassunk példát, mikor beszúráskor egy levélcsúcsot kettéosztunk B+-fa index esetén! (5 pont)
 
-**TODO**
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 53. oldal (mit szúrunk be és
-a beszúrás előtti, majd utáni két fát kell lerajzolni)
+![45. kérdés, fizika.ppt, 53. dia](./images/45.png)
+
+- Mit szúrunk be és a beszúrás előtti, majd utáni két fát kell lerajzolni
 
 ## 46. Mutassunk példát, mikor beszúráskor egy köztes csúcsot kettéosztunk B+-fa index esetén! (5 pont)
 
-**TODO**
+![46. kérdés, fizika.ppt, 54. dia](./images/46.png)
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 54. oldal (mit szúrunk be és
-a beszúrás előtti, majd utáni két fát kell lerajzolni)
+- Mit szúrunk be és a beszúrás előtti, majd utáni két fát kell lerajzolni
 
 ## 47. Mutassunk példát, mikor beszúráskor nő a B+-fa index magassága! (5 pont)
 
-**TODO**
+![47. kérdés, fizika.ppt, 55. dia](./images/47.png)
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 55. oldal (mit szúrunk be és
-a beszúrás előtti, majd utáni két fát kell lerajzolni)
+- Mit szúrunk be és a beszúrás előtti, majd utáni két fát kell lerajzolni
 
 ## 48. Mutassunk példát, mikor törléskor megszüntetünk egy levélcsúcsot B+-fa index esetén! (5 pont)
 
-**TODO**
+![48. kérdés, fizika.ppt, 56. dia](./images/48.png)
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 56. oldal (mit törlünk és a
-törlés előtti, majd utáni két fát kell lerajzolni)
+- Mit törlünk és a törlés előtti, majd utáni két fát kell lerajzolni
 
 ## 49. Mutassunk példát, mikor törléskor csökken a B+-fa index magassága! (5 pont)
 
-**TODO**
+![49. kérdés, fizika.ppt, 58. dia](./images/49.png)
 
-http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 58. oldal (mit törlünk és a
-törlés előtti, majd utáni két fát kell lerajzolni)
+- Mit törlünk és a törlés előtti, majd utáni két fát kell lerajzolni
 
 ## 50. Mutassunk példát arra, mikor egy kevés elemszámú oszlopra bitmap indexet készítünk! (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/08-indexek-1.ppt 33. oldal (a tábla, és a
-régióra készített index)
+![50. kérdés, 08-indexek-1.ppt, 33. dia](./images/50.png)
 
 ## 51. Mutassunk példát arra, mikor logikai feltételek kiértékelését bitmap vektorműveletekre vezetjük vissza! (7 pont)
 
-**TODO**
+```sql
+SELECT COUNT(*)
+FROM CUSTOMER
+WHERE MARITAL_STATUS = 'married' AND
+  REGION IN ('central', 'west');
+```
 
-http://people.inf.elte.hu/kiss/15ab2/08-indexek-1.ppt 34. oldal (a lekérdezés,
-a vektorműveletek, és a lekérdezés eredménye: az utolsó vektorban az egyesek
-száma)
+![51. kérdés, 08-indexek-1.ppt, 34. dia](./images/51.png)
 
 ## 52. Mi a lekérdezések optimalizálásának a célja és miket használunk fel ehhez? (5 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 91. oldal (A cél pontos
-megfogalmazása.)
+- CÉL: A lekérdezéseket gyorsabbá akarjuk tenni a táblákra vonatkozó
+  paraméterek, statisztikák, indexek ismeretében és általános érvényű
+  tulajdonságok, heurisztikák segítségével
 
 ## 53. Adjuk meg a lekérdezések optimalizálásának folyamatábráját! (19 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/algebrai%20opt.ppt 100. oldal (A
-folyamatábrán szereplő csúcsok, feliratok mindegyike 1 pont)
+![53. kérdés, algebrai opt.ppt, 100. dia](./images/53.png)
 
 ## 54. Adjuk meg egy egyszerű relációs algebrai kifejezést és gráfos ábrázolását! (4 pont)
 
@@ -661,164 +684,147 @@ http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  17. oldal, 3.1. 3.2
 
 ## 100. Külső összefésülő rendezésnél mire jó a rendező lépés? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  18. oldal, első sor
+- Létrehozza a rendezett futamokat
 
 ## 101. Külső összefésülő rendezésnél mire jó az összevonási lépés? (1 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  19. oldal, első sor
+- Összefésüli a rendezett futamokat
 
 ## 102. Külső összefésülő rendezésnél mikor kell több menetben végezni az összevonási lépést? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  20. oldal, 2. pont,
-de a betűk magyarázata is kell
+- Ha `N > M`
+  - Ahol `N` a futamok száma, `M` a relációból a memóriába olvasott lapok száma
+  - Ekkor több menetben végezzük az összevonási lépést
+  - Minden menet `M-1` futamot von össze, amíg nincs feldolgozva a reláció
+  - A következő menetben a futamok száma kisebb
+  - A végső menetben keletkezik a végső kimenet
 
 ## 103. Külső összefésülő rendezésnél mennyi a rendező lépés költsége? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  22. oldal, 2. pont,
-de a betűk magyarázata is kell
+- `2 * B_R`
+- Ahol `B_R` (B alsó index R) az `R` reláció lapjainak száma
 
 ## 104. Külső összefésülő rendezésnél mennyi összevonandó futam van kezdetben? (2 pont)
 
-**TODO**
+- Kezdetben `(B_R / M)` felső egészrésze darab összevonandó futam
+- Ahol `B_R` az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
+  olvasott lapok száma
 
 http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  22. oldal, 3.1. pont,
 de a betűk magyarázata is kell
 
 ## 105. Külső összefésülő rendezésnél mennyi az összes menetek száma? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  22. oldal, 3.3. pont,
-de a betűk magyarázata is kell
+- `| log_{M-1}(B_R / M) |`
+- Ahol `B_R` az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
+  olvasott lapok száma
 
 ## 106. Külső összefésülő rendezésnél mennyi blokkot olvasunk minden menetben? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  22. oldal, 3.4. pont,
-de a betűk magyarázata is kell
+- Minden menetben `2 * B_R` lapot olvasunk
+- Ahol `B_R` az `R` reláció lapjainak száma
 
 ## 107. Külső összefésülő rendezésnél mennyi a teljes költség, a végeredmény kiírása nélkül? (4 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  22. oldal, 3.4. pont,
-de a betűk magyarázata is kell
+- `2 * B_R + 2 * B_R * |log_{M-1}(B_R / M)| - B_R`
+- Ahol `B_R` az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
+  olvasott lapok száma
 
 ## 108. A vetítés milyen három lépés megvalósításából áll? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  23. oldal, 4. pont
+- Kezdeti átnézés, rendezés, végső átnézés
 
 ## 109. Soroljuk fel az összekapcsolás 5 megvalósítását! (5 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  24. oldal, 2. pont
+- Skatulyázott ciklusos (nested loop) összekapcsolás
+- Blokk-skatulyázott ciklusos (block-nested loop) összekapcsolás
+- Indexelt skatulyázott ciklusos összekapcsolás
+- Összefésüléses rendező összekapcsolás
+- Hasításos összekapcsolás
 
 ## 110. Skatulyázott (NestedLoop) összekapcsolásnál mennyi a költség legjobb esetben? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  25. oldal, 1.1 pont
-mindhárom sora
+- A legjobb eset akkor áll fenn, ha a kisebb reláció elfér a memóriában
+- Ezt használjuk belső relációnak
+- `B_R + B_S` a költség
+- Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
 
 ## 111. Skatulyázott (NestedLoop) összekapcsolásnál mennyi a költség legrosszabb esetben? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  25. oldal, 1.2 pont
-mindhárom sora
+- A legrosszabb eset akkor áll fenn, ha mindkét relációból csak 1-1 lap fér bele a memóriába
+- S-t minden R-beli rekordnál végig kell olvasni
+- `N_R * B_S + B_R`
+  - Ahol `N_R` az `R` reláció rekordjainak száma
 
 ## 112. Blokk-Skatulyázott (BlockNestedLoop) összekapcsolásnál mennyi a költség legjobb esetben? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  28. oldal, 1.1 pont
-mindhárom sora
+- A legjobb eset akkor áll fenn, ha a kisebb reláció elfér a memóriában
+- Ezt használjuk belső relációnak
+- `B_R + B_S`
+  - Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
 
 ## 113. Blokk-Skatulyázott (BlockNestedLoop) összekapcsolásnál mennyi a költség legrosszabb esetben? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  28. oldal, 1.2 pont
-mindhárom sora
+- A legrosszabb eset akkor áll fenn, ha mindkét relációból csak 1-1 lap fér bele a memóriába
+- S-t minden R-beli lapnál végig kell olvasni
+- `B_R * B_S + B_R`
+  - Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
 
 ## 114. Indexelt összekapcsolásnál mennyi a költség? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  29. oldal, 4. pont
-mindhárom sora
+- `B_R + N_R * c`
+  - Ahol `c` a belső relációból index szerinti kiválasztás költsége
+  - `B_R` az `R` reláció lapjainak száma
+  - `N_R` az `R` reláció rekordjainak száma
+- A kevesebb rekordot tartalmazó reláció legyen a külső
 
 ## 115. Rendezéses-Összefésüléses összekapcsolásnál mennyi a költség? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  30. oldal, 5. pont
+- `Rendezés költsége + B_S + B_R`
+  - Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
 
 ## 116. Hasításos összekapcsolásnál mennyi a költség? (3 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  31. oldal, 4. pont
+- `2 * (B_R + B_S) + (B_R + B_S)`
+  - Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
 
 ## 117. Hasításos összekapcsolásnál mekkora méretű kosarakat képezünk? (2 pont)
 
-**TODO**
+- Alkalmazzuk `h1` hasítófüggvényt az összekapcsolási mezőre és felosztjuk a
+  rekordokat a memóriában elférő részekre
 
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  31. oldal, 2. pont
-első sora
+## 118. Hány sora van a `Sigma_{A=v}(R)` lekérdezés eredményének? (2 pont)
 
-## 118. Hány sora van a **ld. hivatalos docx fájl** lekérdezés eredményének? (2 pont)
+- `SC(A, R)`
+  - Azaz az `A` mező kiválasztási számossága `R`-ben
+  - Ha pl. `A` kulcs: `S(A, R) = 1`
+  - Ha pl. `A` nem kulcs: `S(A, R) = N_R / V(A, R)`
 
-**TODO**
+## 119. Hány sora van a `Sigma_{A<=v}(R)` lekérdezés eredményének? (2 pont)
 
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  40. oldal, 1. pont
+- `N_R * (v - min(A, R)) / (max(A, R) - min(A, R))`
 
-## 119. Hány sora van a **ld. hivatalos docx fájl** lekérdezés eredményének? (2 pont)
+## 120. Hány sora van a `Sigma_{theta_1 AND theta_2 AND … AND … theta_n}(R)` lekérdezés eredményének? (2 pont)
 
-**TODO**
+- Szorzódó valószínűségek
+- `N_R * [(S_1 / N_R) * (S_2 / N_R) * … * (S_n / N_R)]`
 
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  40. oldal, 2. pont
+## 121. Hány sora van a `Sigma_{theta_1 OR theta_2 OR … OR … theta_n}(R)`  lekérdezés eredményének? (2 pont)
 
-## 120. Hány sora van a **ld. hivatalos docx fájl** lekérdezés eredményének? (2 pont)
+- N_R * (1 - [(1 - S_1 / N_R) * (1 - S_2 / N_R) * … * (1 - S_n / N_R)])
 
-**TODO**
+## 122. Hány sora van az R |X| S lekérdezés eredményének? (2 pont)
 
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  40. oldal, 3. pont
-
-## 121. Hány sora van a **ld. hivatalos docx fájl** lekérdezés eredményének? (2 pont)
-
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  40. oldal, 4. pont,
-2. sor
-
-## 122. Hány sora van az R x S lekérdezés eredményének? (2 pont)
-
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  41. oldal, 1. pont
+- `N_R * N_S`
+  - `N_R` és `N_S` az `R` és `S` relációk rekordjainak száma
 
 ## 123. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S = ø? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  41. oldal, 2.1.
+- `N_R * N_S`
 
 ## 124. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S kulcs R-en? (2 pont)
 
-- a kimenet maximális mérete Ns
+- A kimenet maximális mérete `N_S`
 
 ## 125. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S idegen kulcs R-hez? (2 pont)
 
