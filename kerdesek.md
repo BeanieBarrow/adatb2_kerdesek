@@ -624,15 +624,15 @@ WHERE MARITAL_STATUS = 'married' AND
 ## 93. Mennyi rendezett táblában a bináris keresés átlagos költsége, ha minden találatot be kell olvasni (a jelölések magyarázatát is adjuk meg)? (3 pont)
 
 - \|log<sub>2</sub> B<sub>R</sub>\| + m
-  - m: a többlet beolvasandó oldalak száma (additional pages to be read)
+  - m: a többlet beolvasandó lapok száma (additional pages to be read)
   - m = &LeftCeiling;SC(A,R) / F<sub>R</sub>&RightCeiling; - 1 (Felső egészrész)
-    - F<sub>R</sub>: blokkolási tényező, rekordok száma egy oldalon
+    - F<sub>R</sub>: blokkolási tényező, rekordok száma egy lapon
 
 ## 94. Mennyi B+-fa típusú elsődleges index esetén az átlagos keresési költség, ha minden találatot be kell olvasni (a jelölések magyarázatát is adjuk meg)? (2 pont)
 
 - HT<sub>i</sub> + &LeftCeiling;SC(A,R)/F<sub>R</sub>&RightCeiling;
   - HT<sub>i</sub>: szintek száma I indexben
-  - F<sub>R</sub>: blokkolási tényező, rekordok száma egy oldalon
+  - F<sub>R</sub>: blokkolási tényező, rekordok száma egy lapon
 
 ## 95. Mennyi B+-fa típusú másodlagos index esetén az átlagos keresési költség, ha minden találatot be kell olvasni (a jelölések magyarázatát is adjuk meg)? (2 pont)
 
