@@ -60,7 +60,7 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 
 ## 9. Egyenletességi feltétel esetén hány blokkból áll a sA=a(R) lekérdezés eredménye? (1 pont)
 
-- `B(&sigma;<sub>A = a</sub>(R)) = B(R) / I(A)`
+- B(&sigma;<sub>A = a</sub>(R)) = B(R) / I(A)
 
 ## 10. Soroljunk fel legalább 7 különböző fájlszervezési módszert? (7 pont)
 
