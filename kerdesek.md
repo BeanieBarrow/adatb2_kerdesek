@@ -608,6 +608,7 @@ WHERE MARITAL_STATUS = 'married' AND
 ## 90. Adjunk meg egy példát, amiben a vetítések bővítése trükköt alkalmazzuk és indokoljuk, hogy mire jó ez! (8 pont)
 
 ![90. kérdés, algebrai opt.ppt, 122. dia](./images/90.png)
+
 - A bővítésből kapott vetítéseket mélyebbre tudjuk vinni a fában, mint az eredeti vetítést
 
 ## 91. Mennyi az SC(A,R) szelektivitás értéke, ha A kulcs? (1 pont)
