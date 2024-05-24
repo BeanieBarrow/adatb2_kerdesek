@@ -250,6 +250,7 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 ## 38. Ha t szintű indexet használunk és a legfelső szint 1 blokkból áll, akkor mennyi a keresési költség? (1 pont)
 
 - Ha a legfelső szint 1 blokkból áll, akkor `t + 1` blokkolvasást jelent.
+- log<sub>2</sub>(B(I<sup>(t)</sup>)) + t + 1
 
 ## 39. Ha t szintű indexet használunk, mennyi az indexszintek blokkolási faktora és miért? (2 pont)
 
