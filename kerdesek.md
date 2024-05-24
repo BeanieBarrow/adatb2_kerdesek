@@ -29,8 +29,8 @@
 - `T` (_tuple_): rekordok száma 
 - `B`: a fájl mérete blokkokban
 - `bf`: blokkolási faktor
-  - (mennyi rekord fér el egy blokkban: `bf = b/l alsó egészrésze`)
-- `B = T/bf felső egészrésze`
+  - (mennyi rekord fér el egy blokkban: bf = &LeftFloor;b/l&RightFloor; (alsó egészrész)
+- B = &LeftCeiling;T/bf&RightCeiling; (felső egészrész)
 - `M`: memória mérete blokkokban
 - `I(A)`: képméret, az A oszlopban szereplő különböző értékek száma
   - `I(A)` = | &Pi;<sub>A</sub> (R) |
@@ -625,12 +625,12 @@ WHERE MARITAL_STATUS = 'married' AND
 
 - \|log<sub>2</sub> B<sub>R</sub>\| + m
   - m: a többlet beolvasandó oldalak száma (additional pages to be read)
-  - m = ceil( SC(A,R) / F<sub>R</sub> ) - 1
+  - m = &LeftCeiling;SC(A,R) / F<sub>R</sub>&RightCeiling; - 1 (Felső egészrész)
     - F<sub>R</sub>: blokkolási tényező, rekordok száma egy oldalon
 
 ## 94. Mennyi B+-fa típusú elsődleges index esetén az átlagos keresési költség, ha minden találatot be kell olvasni (a jelölések magyarázatát is adjuk meg)? (2 pont)
 
-- HT<sub>i</sub> + ceil( SC(A,R)/F<sub>R</sub> )
+- HT<sub>i</sub> + &LeftCeiling;SC(A,R)/F<sub>R</sub>&RightCeiling;
   - HT<sub>i</sub>: szintek száma I indexben
   - F<sub>R</sub>: blokkolási tényező, rekordok száma egy oldalon
 
@@ -694,7 +694,7 @@ bajusz
 
 ## 104. Külső összefésülő rendezésnél mennyi összevonandó futam van kezdetben? (2 pont)
 
-- Kezdetben (B<sub>R</sub> / M) felső egészrésze darab összevonandó futam
+- Kezdetben &LeftCeiling;B<sub>R</sub> / M&RightCeiling; (felső egészrész) darab összevonandó futam
 - Ahol B<sub>R</sub> az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
   olvasott lapok száma
 
