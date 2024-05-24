@@ -842,9 +842,7 @@ BestPlan(B,C,D,E) |X| A )
 
 ## 130. Több-tagú összekapcsolás suboptimális sorrendjét milyen algoritmussal lehet előállítani, és a tartalmazási hálón milyen irányban halad a kiértékelés? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/09_qp_opt.ppt 20. oldal, cím és nyíl
+- Selinger algoritmus, lentről felfele
 
 ## 131. A Q(A,B) JOIN R(B,C) JOIN S(C,D) lekérdezésnek melyik három kiértékelését hasonlítottuk össze, és melyik volt a legjobb ezek közül? (4 pont)
 
@@ -1038,15 +1036,34 @@ OUTPUT(X): Az X adatbáziselemet tartalmazó puffer kimásolása lemezre.
 
 ## 163. Adjunk meg egy példát Undo naplózás esetén a lemezre írás sorrendjére! (6 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/naplo.ppt 52. oldal teljesen, de lehet más példa is.
+| Lépés | Tevékenység | t | M-A | M-B | D-A | D-B | Napló |
+| - | - | - | - | - | - | - | - |
+| 1 | | | | | | | <T,START> |
+| 2 | READ(A,t) | 8 | 8 | | 8 | 8 | |
+| 3 | t := t*2 | 16 | 8 | | 8 | 8 | |
+| 4 | WRITE(A,t) | 16 | 16 | | 8 | 8 | <T,A,8> |
+| 5 | READ(B,t) | 8 | 16 | 8 | 8 | 8 | |
+| 6 | t := t*2 | 16 | 16 | 8 | 8 | 8 | |
+| 7 | WRITE(B,t) | 16 | 16 | 16 | 8 | 8 | <T,B,8> |
+| 8 | FLUSH LOG | | | | | | |
+| 9 | OUTPUT(A) | 16 | 16 | 16 | 16 | 8 | |
+| 10 | OUTPUT(B) | 16 | 16 | 16 | 16 | 16 | |
+| 11 | | | | | | | <T,COMMIT> |
+| 12 | FLUSH LOG | | | | | | |
 
 ## 164. Adjuk meg Undo naplózás esetén a helyreállítás algoritmusát! (8 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/naplo.ppt 54. oldal teljesen.
+ - Let S = set of transactions with	
+  <Ti, start> in log, but no
+  <Ti, commit> (or <Ti, abort>) record in log
+- For each <Ti, X, v> in log,
+    in reverse order (latest -> earliest) do:
+    - if Ti &in; S then
+      - write(X, v)
+      - output(X)
+- For each Ti &in; S do
+    - write <Ti, abort> to log
+- Flush log
 
 ## 165. Adjunk meg a működés közbeni ellenőrzőpont képzésének lépéseit Undo naplózás esetén! (6 pont)
 
@@ -1089,15 +1106,31 @@ COMMIT>-nak a lemezre kell kerülnie.
 
 ## 170. Adjunk meg egy példát REDO naplózás esetén a lemezre írás sorrendjére! (6 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/naplo.ppt 76. oldal teljesen, de lehet más példa is.
+| Lépés | Tevékenység | t | M-A | M-B | D-A | D-B | Napló |
+| - | - | - | - | - | - | - | - |
+| 1 | | | | | | | <T,START> |
+| 2 | READ(A,t) | 8 | 8 | | 8 | 8 | |
+| 3 | t := t*2 | 16 | 8 | | 8 | 8 | |
+| 4 | WRITE(A,t) | 16 | 16 | | 8 | 8 | <T,A,16> |
+| 5 | READ(B,t) | 8 | 16 | 8 | 8 | 8 | |
+| 6 | t := t*2 | 16 | 16 | 8 | 8 | 8 | |
+| 7 | WRITE(B,t) | 16 | 16 | 16 | 8 | 8 | <T,B,16> |
+| 8 | | | | | | | <T,COMMIT> |
+| 9 | FLUSH LOG | | | | | | |
+| 10 | OUTPUT(A) | 16 | 16 | 16 | 16 | 8 | |
+| 11 | OUTPUT(B) | 16 | 16 | 16 | 16 | 16 | |
+| 12 | | | | | | | <T,END> |
+| 13 | FLUSH LOG | | | | | | |
 
 ## 171. Adjunk meg REDO naplózás esetén a helyreállítás algoritmusát! (8 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/naplo.ppt 78. oldal teljesen.
+- Let S = set of transactions with <Ti, commit> (and no <Ti, end>) in log
+- For each <Ti, X, v> in log, in forward
+     order (earliest -> latest) do:
+    - if Ti &in; S then
+      - write(X, v)
+      - output(X)
+- For each Ti &in; S, write <Ti, end> 
 
 ## 172. Mi jellemző a módosított REDO naplózásra? (8 pont)
 
@@ -1146,9 +1179,21 @@ adatbáziselemek lemezen történő bármilyen megváltoztatását
 
 ## 179. Adjunk meg egy példát UNDO/REDO naplózás esetén a lemezre írás sorrendjére! (6 pont)
 
-**TODO**
+| Lépés | Tevékenység | t | M-A | M-B | D-A | D-B | Napló |
+| - | - | - | - | - | - | - | - |
+| 1 | | | | | | | <T,START> |
+| 2 | READ(A,t) | 8 | 8 | | 8 | 8 | |
+| 3 | t := t*2 | 16 | 8 | | 8 | 8 | |
+| 4 | WRITE(A,t) | 16 | 16 | | 8 | 8 | <T,A,8,16> |
+| 5 | READ(B,t) | 8 | 16 | 8 | 8 | 8 | |
+| 6 | t := t*2 | 16 | 16 | 8 | 8 | 8 | |
+| 7 | WRITE(B,t) | 16 | 16 | 16 | 8 | 8 | <T,B,8,16> |
+| 8 | FLUSH LOG | | | | | | |
+| 9 | OUTPUT(A) | 16 | 16 | 16 | 16 | 8 | |
+| 10 | | | | | | | <T,COMMIT> |
+| 11 | OUTPUT(B) | 16 | 16 | 16 | 16 | 16 | |
 
-http://people.inf.elte.hu/kiss/15ab2/naplo.ppt 95. oldal teljesen, de lehet más példa is.
+- A <T,COMMIT> naplóbejegyzés kiírása kerülhetett volna a 9. lépés elé vagy a 11. lépés mögé is
 
 ## 180. Mi az UNDO/REDO naplózás esetén a helyreállítás 2 alapelve? (4 pont)
 
@@ -1373,16 +1418,24 @@ Aktív módszer: az ütemező beavatkozik, és megakadályozza, hogy kör alakul
 
 ## 212. Adjunk példát konzisztens tranzakciók jogszerű ütemezésére, ami mégsem sorbarendezhető! (6 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 36. oldal teljesen, de
-lehet más is.
+| T1 | T2 | A | B |
+| - | - | - | - |
+| l1(A); r1(A); | | 25 | |
+| A := A+100; | | | |
+| w1(A); u1(A); | | 125 | |
+| | l2(A); r2(A); | 125 | |
+| | A := A*2; | | |
+| | w2(A); u2(A); | 250 | |
+| | l2(B); r2(B); | | 25 |
+| | B := B*2; | | |
+| | w2(B); u2(B); | | 50 |
+| l1(B); r1(B); | | | 50 |
+| B := B+100; | | | |
+| w1(B); u1(B); | | | 150 |
 
 ## 213. Mit hívunk kétfázisú zárolásnak és szemléltessük rajzban is? (2 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 39. oldal rajzzal együtt.
+![213. kérdés, konkurencia.ppt, 39. dia](./images/213.png)
 
 ## 214. Adjunk a tranzakciókra 2, az ütemezésre 1 feltételt, ami elegendő a konfliktus-sorbarendezhetőség bizonyítására! Milyen módon bizonyítható a tétel? (5 pont)
 
@@ -1406,9 +1459,15 @@ elengedésére, amit Tj tart éppen. (j alsó indexben van)
 
 ## 217. Mi a kiéheztetés problémája és milyen megoldás van rá? (2 pont)
 
-**TODO**
+- Tegyük fel, hogy T1,..., Tn irányított kört alkot, ahol Ti vár Ti+1-re az Ai adatelem miatt. 
+  Ha mindegyik tranzakció betartotta, hogy egyre nagyobb indexű adatelemre kért zárat,
+  akkor A1 < A2 < A3 < An < A1 áll fenn, ami ellentmondás.
+  Tehát ez a protokoll is megelőzi a holtpontot, de itt is előre kell tudni, hogy milyen zárakat fog kérni egy tranzakció.
 
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 50. oldal teljesen.
+- Még egy módszer, ami szintén optimista, mint az első:
+  Időkorlát alkalmazása: ha egy tranzakció kezdete óta túl sok idő telt el, akkor ABORT-áljuk.
+  Ehhez az kell, hogy ezt az időkorlátot jól tudjuk megválasztani.
+
 
 ## 218. Osztott és kizárólagos zárak esetén mit hívunk a tranzakció konzisztenciájának? (2 pont)
 
@@ -1426,10 +1485,7 @@ Konzisztens 2PL tranzakciók jogszerű ütemezése konfliktus-sorbarendezhető.
 
 ## 221. Osztott és kizárólagos zárak esetén adjuk meg a kompatibilitási mátrixot! (4 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 62. oldal utolsó pont, a
-zöld, kék, piros szövegekkel együtt
+![221. kérdés, konkurencia.ppt, 62. dia](./images/221.png)
 
 ## 222. Többmódú zárak kompatibilitási mátrixa segítségével hogyan definiáljuk a megelőzési gráfot? (5 pont)
 
@@ -1447,7 +1503,12 @@ felrajzolt megelőzési gráf nem tartalmaz irányított kört.
 
 ## 224. Adjunk példát arra, hogy egy zárolási ütemező elutasít sorbarendezhető ütemezést? (4 pont)
 
-**TODO**
+- l1(A); r1(A); u1(A); l2(A); r2(A); u2(A); l1(A); w1(A); u1(A); l2(B); r2(B); u2(B)
+- Ha megnézzük az írás/olvasás műveleteket (r1(A); r2(A); w1(A); r2(B)), akkor látszik, hogy az ütemezés hatása azonos a T2T1 soros ütemezés hatásával, vagyis ez egy
+  sorbarendezhető ütemezés zárak nélkül
+- Megelőzési gráf: ![224. kérdés, konkurencia.ppt, 65. dia](./images/224.png)
+- Mivel tartalmaz irányított kört a megelőzési gráf, ezért elvetné az ütemező
+  - Nem lesz sorbarendezhető az az ütemezés, amiben már csak a zárak vannak benne
 
 http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 65. oldal példája,
 valamint a kék mondata, a megelőzési gráf felrajzolása és „mivel tartalmaz
