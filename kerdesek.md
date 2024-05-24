@@ -240,12 +240,12 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 
 ## 36. Ha t szintű indexet használunk, mennyi a keresési költség blokkműveletek számában mérve? (1 pont)
 
-- log<sub>2</sub>(B( I^(t) )) + t db. blokkolvasás
+- log<sub>2</sub>(B( I<sup>(t)</sup> )) + t db. blokkolvasás
 - Mi `t`? → ld. következő kérdés
 
 ## 37. Ha t szintű indexet használunk, a legfelső szinten milyen keresést használunk? (1 pont)
 
-- `t`: t-edik szinten `(I^t)` bináris kereéssel keressük meg a fedő indexrekordot.
+- `t`: t-edik szinten I<sup>(t)</sup> bináris kereéssel keressük meg a fedő indexrekordot.
 
 ## 38. Ha t szintű indexet használunk és a legfelső szint 1 blokkból áll, akkor mennyi a keresési költség? (1 pont)
 
@@ -261,9 +261,9 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 
 - Főfájl: `B`
   - I. szint: `B / bf(I)`
-  - II. szint: `B / bf(I)^2`
+  - II. szint: B / bf(I)<sup>2</sup>
   - …
-  - t. szint: `B / bf(I)^t`
+  - t. szint: B / bf(I)<sup>t</sup>
 - ld. bővebben http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 48. oldal
   (táblázat)
 
@@ -868,20 +868,20 @@ Tr |X| s = Tr*Ts/I (r, s alsóindexben lévő R, S)
 
 - Az 1. join költsége B + T*B/I plusz
 - Az 1. join kiírása (output mérete): 2TB/I plusz
-- A 2. join költsége 2TB/I +[(T^2 /I)*B]/I plusz
-- A teljes output kiírása: 3T^2 B/I^2
-- (a) végeredménye: B + 5TB/I + 4 T^2 B/I^2
+- A 2. join költsége 2TB/I +[(T<sup>2</sup> /I)*B]/I plusz
+- A teljes output kiírása: 3T<sup>2</sup> B/I<sup>2</sup>
+- (a) végeredménye: B + 5TB/I + 4 T<sup>2</sup> B/I<sup>2</sup>
 
 ## 136. A Q(A,B) JOIN R(B,C) JOIN S(C,D) lekérdezésnek balról jobbra (b) kiértékelésénél mennyit lehet megspórolni és mennyi a teljes költség? (5 pont)
 
 - 2 * (2T*B/I)
-- (b) végeredménye: B + TB/I + 4 T^2 *B/I^2
+- (b) végeredménye: B + TB/I + 4 T<sup>2</sup> *B/I<sup>2</sup>
 
 ## 137. A Q(A,B) JOIN R(B,C) JOIN S(C,D) lekérdezésnek c) kiértékelésénél (középső ténytáblához indexek alapján kapcsoljuk a dimenziótáblákat) milyen költségek összege lesz a teljes költség, és mennyi a teljes költség? (4 pont)
 
 - Q beolvasása B plusz
 - Q és S olvasása R minden sorára: T*(B/I + B/I) plusz
-- A teljes output kiírása: 3T^2 B/I^2
+- A teljes output kiírása: 3T<sup>2</sup> B/I<sup>2</sup>
 
 ## 138. A Q(A,B) JOIN R(B,C) JOIN S(C,D) lekérdezésnek c) és b) kiértékelésének költségei hogy aránylanak egymáshoz, és milyen feltétel szükséges ehhez? (2 pont)
 
