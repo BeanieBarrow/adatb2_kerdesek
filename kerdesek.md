@@ -828,7 +828,7 @@ nEquivalent to number of ways to parenthesize n-way joins
 
 nRecurrence: T(1) = 1
 
-T(n) = &sigma;<sub>T(i)T(n-i)</sub>
+T(n) = &Sigma; T(i)T(n-i)
 
 T(6) = 42
 
