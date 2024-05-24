@@ -527,18 +527,24 @@ WHERE MARITAL_STATUS = 'married' AND
 
 - &Pi;<sub>A</sub>(E1 - E2) ~= &Pi;<sub>A1</sub>(E1) - &Pi;<sub>A2</sub>(E2)
 - E1:
+
   | A | B |
   | - | - |
   | 0 | 0 |
   | 0 | 1 |
+
 - E2:
+
   | A | B |
   | - | - |
   | 0 | 0 |
+
 - &Pi;<sub>A</sub>(E1 - E2) =
+
   | A |
   | - |
   | 0 |
+
 - &Pi;<sub>A1</sub>(E1) - &Pi;<sub>A2</sub>(E2) = &empty;
 
 ## 78. Fogalmazzuk meg a relációs algebrai optimalizálás 4 heurisztikus elvét! (4 pont)
