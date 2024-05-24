@@ -81,6 +81,8 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 - Utolsó blokkba tesszük a rekordot, 1 olvasás + 1 írás
 - Módosítás: 1 keresés + 1 írás
 - Törlés: 1 keresés + 1 írás (üres hely marad, vagy a törlési bitet állítják át)
+- Itt a keresés költsége `B` a legrosszabb esetben
+  - `B/2` átlagos esetben az egyenletességi feltétel mellett
 
 ## 13. Mit mond meg a h(x) hasító függvény értéke? (1 pont)
 
@@ -510,7 +512,8 @@ WHERE MARITAL_STATUS = 'married' AND
 
 ## 75. Adjuk meg a vetítés és szorzás felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
 
-- Legyen i=1,2 esetén Ai az Ei reláció oszlopainak egy halmaza, valamint legyen A=A1&cup;A2
+- Legyen i=1,2 esetén Ai az Ei reláció oszlopainak egy halmaza, valamint legyen
+  A=A1&cup;A2
 - &Pi;<sub>A</sub>(E1 x E2) ~= &Pi;<sub>A1</sub>(E1) x &Pi;<sub>A2</sub>(E2)
 
 ## 76. Adjuk meg a vetítés és egyesítés felcserélhetőségére vonatkozó szabályt relációs algebrai optimalizálás esetén! (2 pont)
