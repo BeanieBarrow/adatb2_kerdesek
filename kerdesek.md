@@ -33,7 +33,7 @@
 - `B = T/bf felső egészrésze`
 - `M`: memória mérete blokkokban
 - `I(A)`: képméret, az A oszlopban szereplő különböző értékek száma
-  - `I(A) = | PI_A (R) |`
+  - `I(A)` = | &Pi;<sub>A</sub> (R) |
 
 ## 5. Adjuk meg RxS méretét blokkokban kifejezve! (2 pont)
 
@@ -60,7 +60,7 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 
 ## 9. Egyenletességi feltétel esetén hány blokkból áll a sA=a(R) lekérdezés eredménye? (1 pont)
 
-- `B(Sigma_A = a(R)) = B(R) / I(A)`
+- `B(&sigma;<sub>A = a</sub>(R)) = B(R) / I(A)`
 
 ## 10. Soroljunk fel legalább 7 különböző fájlszervezési módszert? (7 pont)
 
@@ -86,7 +86,7 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 
 ## 13. Mit mond meg a h(x) hasító függvény értéke? (1 pont)
 
-- Egy `h(x) eleme {1, …, K}` hasító függvény értéke mondja meg, hogy melyik kosárba
+- Egy h(x) &in; {1, …, K} hasító függvény értéke mondja meg, hogy melyik kosárba
   tartozik a rekord, ha `x` volt az indexmező értéke a rekordban
 
 ## 14. Mikor jó egy hasító függvény és ilyenkor milyen hosszúak a blokkláncok? (2 pont)
@@ -163,17 +163,17 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 
 ## 24. Mennyi a keresési költség rendezett mező esetében? (1 pont)
 
-- `log_2(B)` (kettes alapú logaritmus `B`)
+- log<sub>2</sub>(B)
 
 ## 25. Mennyi a keresési költség rendezett mező esetében, ha gyűjtő blokkokat is használunk? (1 pont)
 
-- Összköltség `log_2(B - G) + G` (Ha a gyűjtö blokkban találjuk meg)
-  - Egyébként: `log_2(B - G)`
+- Összköltség log<sub>2</sub>(B - G) + G (Ha a gyűjtö blokkban találjuk meg)
+  - Egyébként: log<sub>2</sub>(B - G)
 - Részletesebb leírás: http://people.inf.elte.hu/kiss/13ab2osz/fizika.ppt 22. dia alja
 
 ## 26. Mennyi a keresési költség rendezett mező esetében, ha minden blokkot félig üresen hagyunk? (1 pont)
 
-- `1 + log_2(B)`
+- 1 + log<sub>2</sub>(B)
 
 ## 27. Milyen mindig az indexrekord szerkezete? (1 pont)
 
@@ -198,7 +198,7 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 
 ## 30. Mennyi a keresési költség elsődleges index esetén? (1 pont)
 
-- `1 + log_2(B(I))`
+- 1 + log<sub>2</sub>(B(I))
 
 ## 31. Adjuk meg a másodlagos index 5 jellemzőjét! (5 pont)
 
@@ -213,10 +213,10 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 ## 32. Hogyan keresünk a másodlagos indexben és mennyi a keresés költsége? (5 pont)
 
 - Az indexben keresés az index rendezettsége miatt bináris kereséssel történik:
-  `log_2(B(I))`
+  log<sub>2</sub>(B(I))
 - A talált indexrekordban szereplő blokkmutatónak megfelelő blokkot még be kell
   olvasni
-- `1 + log_2(B(I)) << log_2(B)` (rendezett eset)  
+- 1 + log<sub>2</sub>(B(I)) << log<sub>2</sub>(B) (rendezett eset)  
 - Az elsődleges indexnél rosszabb a keresési idő, mert több az indexrekord
 
 ## 33. Mit hívunk klaszterszervezésű táblának? (1 pont)
@@ -240,7 +240,7 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 
 ## 36. Ha t szintű indexet használunk, mennyi a keresési költség blokkműveletek számában mérve? (1 pont)
 
-- `log_2(B( I^(t) )) + t` db. blokkolvasás
+- log<sub>2</sub>(B( I^(t) )) + t db. blokkolvasás
 - Mi `t`? → ld. következő kérdés
 
 ## 37. Ha t szintű indexet használunk, a legfelső szinten milyen keresést használunk? (1 pont)
@@ -269,7 +269,7 @@ B(RxS) = (T(R) * T(S)) * (l(R) + l(S)) / b =
 ## 41. Ha t szintű indexet használunk, és a legfelső szint 1 blokkból áll, abból milyen egyenlet következik és mi a megoldása t-re? (2 pont)
 
 - Ha `t`-edik szinten 1 blokk: `1 = B / bf(I)`
-- Azaz `t = log_{bf(I)}(B) < log_2(B)`
+- Azaz t = log<sub>bf(I)</sub>(B) < log<sub>2</sub>(B)
 
 ## 42. Mi a két legfontosabb jellemzője a B+-faindexnek? (2 pont)
 
@@ -681,13 +681,13 @@ bajusz
 
 ## 103. Külső összefésülő rendezésnél mennyi a rendező lépés költsége? (2 pont)
 
-- `2 * B_R`
-- Ahol `B_R` (B alsó index R) az `R` reláció lapjainak száma
+- 2 * B<sub>R</sub>
+- Ahol B<sub>R</sub> az `R` reláció lapjainak száma
 
 ## 104. Külső összefésülő rendezésnél mennyi összevonandó futam van kezdetben? (2 pont)
 
-- Kezdetben `(B_R / M)` felső egészrésze darab összevonandó futam
-- Ahol `B_R` az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
+- Kezdetben (B<sub>R</sub> / M) felső egészrésze darab összevonandó futam
+- Ahol B<sub>R</sub> az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
   olvasott lapok száma
 
 http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  22. oldal, 3.1. pont,
@@ -695,19 +695,19 @@ de a betűk magyarázata is kell
 
 ## 105. Külső összefésülő rendezésnél mennyi az összes menetek száma? (2 pont)
 
-- `| log_{M-1}(B_R / M) |`
-- Ahol `B_R` az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
+- | log<sub>M-1</sub>(B<sub>R</sub> / M) |
+- Ahol B<sub>R</sub> az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
   olvasott lapok száma
 
 ## 106. Külső összefésülő rendezésnél mennyi blokkot olvasunk minden menetben? (2 pont)
 
-- Minden menetben `2 * B_R` lapot olvasunk
-- Ahol `B_R` az `R` reláció lapjainak száma
+- Minden menetben 2 * B<sub>R</sub> lapot olvasunk
+- Ahol B<sub>R</sub> az `R` reláció lapjainak száma
 
 ## 107. Külső összefésülő rendezésnél mennyi a teljes költség, a végeredmény kiírása nélkül? (4 pont)
 
-- `2 * B_R + 2 * B_R * |log_{M-1}(B_R / M)| - B_R`
-- Ahol `B_R` az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
+- 2 * B<sub>R</sub> + 2 * B<sub>R</sub> * |log<sub>M-1</sub>(B<sub>R</sub> / M)| - B<sub>R</sub>
+- Ahol B<sub>R</sub> az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
   olvasott lapok száma
 
 ## 108. A vetítés milyen három lépés megvalósításából áll? (3 pont)
@@ -726,91 +726,91 @@ de a betűk magyarázata is kell
 
 - A legjobb eset akkor áll fenn, ha a kisebb reláció elfér a memóriában
 - Ezt használjuk belső relációnak
-- `B_R + B_S` a költség
-- Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
+- B<sub>R</sub> + B<sub>S</sub> a költség
+- Ahol B<sub>R</sub> és `B<sub>S</sub> az `R` és `S` relációk lapjainak száma
 
 ## 111. Skatulyázott (NestedLoop) összekapcsolásnál mennyi a költség legrosszabb esetben? (3 pont)
 
 - A legrosszabb eset akkor áll fenn, ha mindkét relációból csak 1-1 lap fér bele a memóriába
 - S-t minden R-beli rekordnál végig kell olvasni
-- `N_R * B_S + B_R`
-  - Ahol `N_R` az `R` reláció rekordjainak száma
+- N<sub>R</sub> * B<sub>S</sub> + B<sub>R</sub>
+  - Ahol N<sub>R</sub> az `R` reláció rekordjainak száma
 
 ## 112. Blokk-Skatulyázott (BlockNestedLoop) összekapcsolásnál mennyi a költség legjobb esetben? (3 pont)
 
 - A legjobb eset akkor áll fenn, ha a kisebb reláció elfér a memóriában
 - Ezt használjuk belső relációnak
-- `B_R + B_S`
-  - Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
+- B<sub>R</sub> + B<sub>S</sub>
+  - Ahol B<sub>R</sub> és B<sub>S</sub> az `R` és `S` relációk lapjainak száma
 
 ## 113. Blokk-Skatulyázott (BlockNestedLoop) összekapcsolásnál mennyi a költség legrosszabb esetben? (3 pont)
 
 - A legrosszabb eset akkor áll fenn, ha mindkét relációból csak 1-1 lap fér bele a memóriába
 - S-t minden R-beli lapnál végig kell olvasni
-- `B_R * B_S + B_R`
-  - Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
+- B<sub>R</sub> * B<sub>S</sub> + B<sub>R</sub>
+  - Ahol B<sub>R</sub> és B<sub>S</sub> az `R` és `S` relációk lapjainak száma
 
 ## 114. Indexelt összekapcsolásnál mennyi a költség? (3 pont)
 
-- `B_R + N_R * c`
+- B<sub>R</sub> + N<sub>R</sub> * c
   - Ahol `c` a belső relációból index szerinti kiválasztás költsége
-  - `B_R` az `R` reláció lapjainak száma
-  - `N_R` az `R` reláció rekordjainak száma
+  - B<sub>R</sub> az `R` reláció lapjainak száma
+  - N<sub>R</sub> az `R` reláció rekordjainak száma
 - A kevesebb rekordot tartalmazó reláció legyen a külső
 
 ## 115. Rendezéses-Összefésüléses összekapcsolásnál mennyi a költség? (3 pont)
 
-- `Rendezés költsége + B_S + B_R`
-  - Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
+- Rendezés költsége + B<sub>S</sub> + B<sub>R</sub>
+  - Ahol B<sub>R</sub> és B<sub>S</sub> az `R` és `S` relációk lapjainak száma
 
 ## 116. Hasításos összekapcsolásnál mennyi a költség? (3 pont)
 
-- `2 * (B_R + B_S) + (B_R + B_S)`
-  - Ahol `B_R` és `B_S` az `R` és `S` relációk lapjainak száma
+- 2 * (B<sub>R</sub> + B<sub>S</sub>) + (B<sub>R</sub> + B<sub>S</sub>)
+  - Ahol B<sub>R</sub> és B<sub>S</sub> az `R` és `S` relációk lapjainak száma
 
 ## 117. Hasításos összekapcsolásnál mekkora méretű kosarakat képezünk? (2 pont)
 
 - Alkalmazzuk `h1` hasítófüggvényt az összekapcsolási mezőre és felosztjuk a
   rekordokat a memóriában elférő részekre
 
-## 118. Hány sora van a `Sigma_{A=v}(R)` lekérdezés eredményének? (2 pont)
+## 118. Hány sora van a &sigma;<sub>A=v</sub>(R) lekérdezés eredményének? (2 pont)
 
 - `SC(A, R)`
   - Azaz az `A` mező kiválasztási számossága `R`-ben
   - Ha pl. `A` kulcs: `S(A, R) = 1`
-  - Ha pl. `A` nem kulcs: `S(A, R) = N_R / V(A, R)`
+  - Ha pl. `A` nem kulcs: S(A, R) = N<sub>R</sub> / V(A, R)
 
-## 119. Hány sora van a `Sigma_{A<=v}(R)` lekérdezés eredményének? (2 pont)
+## 119. Hány sora van a &sigma;<sub>A<=v</sub>(R) lekérdezés eredményének? (2 pont)
 
-- `N_R * (v - min(A, R)) / (max(A, R) - min(A, R))`
+- N<sub>R</sub> * (v - min(A, R)) / (max(A, R) - min(A, R))
 
-## 120. Hány sora van a `Sigma_{theta_1 AND theta_2 AND … AND … theta_n}(R)` lekérdezés eredményének? (2 pont)
+## 120. Hány sora van a &sigma;<sub>theta<sub>1</sub> &wedge; theta<sub>2</sub> &wedge; … &wedge; … &theta;<sub>n</sub></sub>(R) lekérdezés eredményének? (2 pont)
 
 - Szorzódó valószínűségek
-- `N_R * [(S_1 / N_R) * (S_2 / N_R) * … * (S_n / N_R)]`
+- N<sub>R</sub> * [(S<sub>1</sub> / N<sub>R</sub>) * (S<sub>2</sub> / N<sub>R</sub>) * … * (S<sub>n</sub> / N<sub>R</sub>)]
 
-## 121. Hány sora van a `Sigma_{theta_1 OR theta_2 OR … OR … theta_n}(R)`  lekérdezés eredményének? (2 pont)
+## 121. Hány sora van a &sigma;<sub>&theta;<sub>1</sub> &vee; &theta;<sub>2</sub> &vee; … &vee; … &theta;<sub>n</sub></sub>(R)  lekérdezés eredményének? (2 pont)
 
-- N_R * (1 - [(1 - S_1 / N_R) * (1 - S_2 / N_R) * … * (1 - S_n / N_R)])
+- N<sub>R</sub> * (1 - [(1 - S<sub>1</sub> / N<sub>R</sub>) * (1 - S<sub>2</sub> / N<sub>R</sub>) * … * (1 - S<sub>n</sub> / N<sub>R</sub>)])
 
 ## 122. Hány sora van az R |X| S lekérdezés eredményének? (2 pont)
 
-- `N_R * N_S`
-  - `N_R` és `N_S` az `R` és `S` relációk rekordjainak száma
+- N<sub>R</sub> * N<sub>S</sub>
+  - N<sub>R</sub> és N<sub>S</sub> az `R` és `S` relációk rekordjainak száma
 
-## 123. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S = ø? (2 pont)
+## 123. Hány sora van az R |X| S lekérdezés eredményének, ha R &cap; S = ø? (2 pont)
 
-- `N_R * N_S`
+- N<sub>R</sub> * N<sub>S</sub>
 
-## 124. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S kulcs R-en? (2 pont)
+## 124. Hány sora van az R |X| S lekérdezés eredményének, ha R &cap; S kulcs R-en? (2 pont)
 
-- A kimenet maximális mérete `N_S`
+- A kimenet maximális mérete `N<sub>S`
 
-## 125. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S idegen kulcs R-hez? (2 pont)
+## 125. Hány sora van az R |X| S lekérdezés eredményének, ha R &cap; S idegen kulcs R-hez? (2 pont)
 
 - Ns
 
-## 126. Hány sora van az R |X| S lekérdezés eredményének, ha R metszet S = {A} sem R-nek, sem S-nek nem kulcsa? (2 pont)
+## 126. Hány sora van az R |X| S lekérdezés eredményének, ha R &cap; S = {A} sem R-nek, sem S-nek nem kulcsa? (2 pont)
 
 - {A}, sem R-nek, sem S-nek nem kulcsa
 
@@ -820,7 +820,7 @@ nEquivalent to number of ways to parenthesize n-way joins
 
 nRecurrence: T(1) = 1
 
-T(n) = SIGMA_{T(i)T(n-i)}
+T(n) = &sigma;<sub>T(i)T(n-i)</sub>
 
 T(6) = 42
 
