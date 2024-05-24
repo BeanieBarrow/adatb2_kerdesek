@@ -703,7 +703,7 @@ de a betűk magyarázata is kell
 
 ## 105. Külső összefésülő rendezésnél mennyi az összes menetek száma? (2 pont)
 
-- | log<sub>M-1</sub>(B<sub>R</sub> / M) |
+- |log<sub>M-1</sub>(B<sub>R</sub> / M)|
 - Ahol B<sub>R</sub> az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
   olvasott lapok száma
 
@@ -714,9 +714,10 @@ de a betűk magyarázata is kell
 
 ## 107. Külső összefésülő rendezésnél mennyi a teljes költség, a végeredmény kiírása nélkül? (4 pont)
 
-- 2 * B<sub>R</sub> + 2 * B<sub>R</sub> * |log<sub>M-1</sub>(B<sub>R</sub> / M)| - B<sub>R</sub>
-- Ahol B<sub>R</sub> az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
-  olvasott lapok száma
+- 2 * B<sub>R</sub> + 2 * B<sub>R</sub> * |log<sub>M-1</sub>(B<sub>R</sub> /
+  M)| - B<sub>R</sub>
+- Ahol B<sub>R</sub> az `R` reláció lapjainak száma, `M` az `R` relációból a
+  memóriába olvasott lapok száma
 
 ## 108. A vetítés milyen három lépés megvalósításából áll? (3 pont)
 
@@ -735,11 +736,12 @@ de a betűk magyarázata is kell
 - A legjobb eset akkor áll fenn, ha a kisebb reláció elfér a memóriában
 - Ezt használjuk belső relációnak
 - B<sub>R</sub> + B<sub>S</sub> a költség
-- Ahol B<sub>R</sub> és `B<sub>S</sub> az `R` és `S` relációk lapjainak száma
+- Ahol B<sub>R</sub> és B<sub>S</sub> az `R` és `S` relációk lapjainak száma
 
 ## 111. Skatulyázott (NestedLoop) összekapcsolásnál mennyi a költség legrosszabb esetben? (3 pont)
 
-- A legrosszabb eset akkor áll fenn, ha mindkét relációból csak 1-1 lap fér bele a memóriába
+- A legrosszabb eset akkor áll fenn, ha mindkét relációból csak 1-1 lap fér
+  bele a memóriába
 - S-t minden R-beli rekordnál végig kell olvasni
 - N<sub>R</sub> * B<sub>S</sub> + B<sub>R</sub>
   - Ahol N<sub>R</sub> az `R` reláció rekordjainak száma
@@ -863,11 +865,11 @@ _feltéve, hogy Q,R,S paraméterei megegyeznek, Q.B-re és S.C-re klaszterindex�
 
 ## 133. Az R(A,B) JOIN S(B,C) lekérdezés eredményében mennyi a sorok száma? (2 pont)
 
-Tr |X| s = Tr*Ts/I (r, s alsóindexben lévő R, S)
+T<sub>R</sub> |X| S = T<sub>R</sub> * T<sub>S</sub> / I
 
 ## 134. Az R(A,B) JOIN S(B,C) lekérdezés eredménye hány blokkból áll? (2 pont)
 
-(TrBs + TsBr )/I (r, s alsóindexben lévő R, S)
+(T<sub>R</sub>B<sub>S</sub> + T<sub>S</sub>B<sub>R</sub>) / I
 
 ## 135. A Q(A,B) JOIN R(B,C) JOIN S(C,D) lekérdezésnek balról jobbra (a) kiértékelésénél milyen költségek összege lesz a teljes költség, és mennyi a teljes költség? (5 pont)
 
@@ -906,7 +908,7 @@ ha T/I tart a végtelenbe. Vagyis ha T/I elég nagy, akkor a c költsége nagyj�
 
 ## 141. Adjuk meg a ROWID szerkezetét, és egy példát is rá Oracle esetében! (2 pont)
 
-- ROWID: <Blokk>.<Sor>.<Fájl>
+- ROWID: `<Blokk>.<Sor>.<Fájl>`
 - Rowid: 00000006.0000.000X
 
 ## 142. Mi az “Explain plan for<SQL-utasítás>” utasítás hatása?  (2 pont)
@@ -933,7 +935,7 @@ Táblaelérés rowid alapján:
 - Konzisztenciát megtartó adatkezelő műveletek sorozata
 - Ezek után mindig feltesszük:
   - Ha `T` tranzakció konzisztens állapotból indul
-  - + `T` tranzakció csak egyedül futna le
+  - \+ `T` tranzakció csak egyedül futna le
   - => `T`-t konzisztens állapotban hagyja az adatbázis
 
 ## 146. Mit jelent a tranzakció atomossági tulajdonsága? (2 pont)
@@ -1320,7 +1322,7 @@ Azt mondjuk, hogy egy ütemezés konfliktus-sorbarendezhető
 
 ## 197. Mi a konfliktus-sorbarendezhetőség elve? (3 pont)
 
-nem konfliktusos cserékkel az ütemezést megpróbáljuk soros ütemezéssé
+Nem konfliktusos cserékkel az ütemezést megpróbáljuk soros ütemezéssé
 átalakítani. Ha ezt meg tudjuk tenni, akkor az eredeti ütemezés sorbarendezhető
 volt, ugyanis az adatbázis állapotára való hatása változatlan marad minden nem
 konfliktusos cserével.
@@ -1513,7 +1515,10 @@ felrajzolt megelőzési gráf nem tartalmaz irányított kört.
 - l1(A); r1(A); u1(A); l2(A); r2(A); u2(A); l1(A); w1(A); u1(A); l2(B); r2(B); u2(B)
 - Ha megnézzük az írás/olvasás műveleteket (r1(A); r2(A); w1(A); r2(B)), akkor látszik, hogy az ütemezés hatása azonos a T2T1 soros ütemezés hatásával, vagyis ez egy
   sorbarendezhető ütemezés zárak nélkül
-- Megelőzési gráf: ![224. kérdés, konkurencia.ppt, 65. dia](./images/224.png)
+- Megelőzési gráf:
+
+![224. kérdés, konkurencia.ppt, 65. dia](./images/224.png)
+
 - Mivel tartalmaz irányított kört a megelőzési gráf, ezért elvetné az ütemező
   - Nem lesz sorbarendezhető az az ütemezés, amiben már csak a zárak vannak benne
 
@@ -1685,9 +1690,7 @@ DML-zárakat két szinten kaphatnak a tranzakciók:
 
 ## 248. Milyen zártípusokat használ az Oracle sorokra és táblákra? (6 pont)
 
-Sorok szintjén csak egyféle zármód létezik,
-
-- a kizárólagos (írási - X).
+Sorok szintjén csak egyféle zármód létezik: a kizárólagos (írási - X).
 
 1. row share (RS) vagy subshare (SS),
 2. row exclusive (RX) vagy subexclusive (SX),
