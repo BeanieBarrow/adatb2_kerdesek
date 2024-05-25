@@ -659,11 +659,20 @@ WHERE MARITAL_STATUS = 'married' AND
 - lineáris keresés
 
 ## 98. Milyen adatbázis műveletekhez kell rendezés? (5 pont)
+Az alábbi adatbázis műveletekhez szükséges a rendezés:
 
-**TODO**
+**SELECT DISTINCT:** 
+- a duplikált értékek kiszűrése érdekében szükséges a rendezés.
+  - példa: `SELECT DISTINCT cid FROM takes`
 
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  16. oldal, az 5
-bajusz
+**Projektálás (π):** 
+- A duplikált értékek kiszűrése.
+
+**Halmazműveletek:** 
+- A duplikált értékek kiszűrése miatt:
+  - 𝑅 ∩ 𝑆 (metszet)
+  - 𝑅 ∪ 𝑆 (unió)
+
 
 ## 99. Milyen két fajtája van a rendezésnek? (2 pont)
 
@@ -1345,11 +1354,7 @@ konfliktusos cserével.
 5. `r1(A); w1(A); r1(B); w1(B); r2(A); w2(A); r2(B); w2(B);`
 
 ## 200. Adjunk példát sorbarendezhető, de nem konfliktus-sorbarendezhető ütemezésre (4 pont)
-
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 17. oldal S2 példája, mert
-hatása megegyezik a soros S1-gyel (Si-ket részletezni!)
+`S2: w1(Y); w2(Y); w2(X); w1(X); w3(X);`
 
 ## 201. Mi a konfliktus-sorbarendezhetőség tesztelésének alapötlete? (2 pont)
 
@@ -1538,11 +1543,13 @@ L2 erősebb L1-nél, ha a kompatibilitási mátrixban L2 sorában/oszlopában mi
 olyan pozícióban „NEM" áll, amelyben L1 sorában/oszlopában „NEM" áll.
 
 ## 227. Adjuk meg a módosítási zár kompatibilitási mátrixát és értelmezzük röviden!(4 pont)
+||S|X|U|
+|:--:|:--:|:--:|:--:|
+|S|igen|nem|igen|
+|X|nem|nem|nem|
+|U|nem|nem|nem|
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 70. oldal a mátrix és az
-alatta lévő mondat.
+- Az U módosítási zár úgy néz ki, mintha osztott zár lenne, amikor kérjük, és úgy néz ki, mintha kizárólagos zár lenne, amikor már megvan. 
 
 ## 228. Mi az inci(X) művelet és adjuk meg a növelési zár kompatibilitási mátrixát! (4 pont)
 
@@ -1557,11 +1564,11 @@ Az inci(X) művelet:
 
 ## 229. Adjunk meg a zártábla egy lehetséges formáját, a mezők tartalmát magyarázzuk is el! (8 pont)
 
-**TODO**
+![229. kérdés, konkurencia.ppt, 83. dia](./images/229.png)
 
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 83. oldal összes ábrája,
-csoportos módra vonatkozó mondat, 84. oldalon várakozási bit mondata, 85
-oldalon az ábra alatti szöveg a lista tartalmáról.
+A várakozási bit (waiting bit) azt adja meg, hogy van‑e legalább egy tranzakció, amely az A zárolására várakozik.
+
+Az összes olyan tranzakciót leíró lista, amelyek vagy jelenleg zárolják A‑t, vagy A zárolására várakoznak. 
 
 ## 230. A zárfeloldások sorrendje milyen elvek alapján történhet? (3 pont)
 
@@ -1586,13 +1593,11 @@ oldalon az ábra alatti szöveg a lista tartalmáról.
 
 **TODO**
 
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 100. oldal 2. és 3. pont.
+http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 100. oldal 2. és 3. pont. (előző kérdés válasza?)
 
 ## 234. Adjuk meg a csoportos móddal kiegészített figyelmeztető zárakra vonatkozó kompatibilitási mátrixot! (5 pont)
 
-**TODO**
-
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 102. oldal mátrixa, T igen, F nem.
+![234. kérdés, konkurencia.ppt, 102. dia](./images/234.png)
 
 ## 235. Mit hívunk nem ismételhető olvasásnak és mi a probléma vele? (4 pont)
 
