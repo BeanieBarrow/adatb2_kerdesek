@@ -1184,8 +1184,12 @@ nem fejezetteket jelöljük meg `<Ti, abort>`-tal. (Módosított REDO napló)
 
 ## 173. Fogalmazzunk meg 3 különbséget az UNDO és REDO naplózás esetén! (3 pont)
 
-- Az adat változás utáni értékét jegyezzük fel a naplóba
-- Máshová rakjuk a COMMIT-ot, a kiírás elé => megtelhet a puffer
+- Redo: Az adat változás utáni értékét jegyezzük fel a naplóba
+  - Undo: A változás előttit
+- Máshová rakjuk a COMMIT-ot
+  - Undo: Output műveletek (kiírás) előtt
+    - Megtelhet a puffer
+  - Redo: Output műveletek után
 - Az UNDO protokoll esetleg túl gyakran akar írni => itt el lehet halasztani az
   írást
 
@@ -1196,9 +1200,12 @@ módosításokat tárol.
 
 ## 175. Adjuk meg a működés közbeni ellenőrzőpont képzésének lépéseit REDO naplózás esetén! (6 pont)
 
-UR1: Mielőtt az adatbázis bármely X elemének értékét - valamely T tranzakció
-által végzett módosítás miatt - a lemezen módosítanánk, ezt megelőzően a
-`<T,X,v,w>` naplóbejegyzésnek lemezre kell kerülnie.
+1. <START CKPT(T1,…,Tk)> naplóbejegyzés elkészítése és lemezre írása, ahol
+   T1,…,Tk az összes éppen aktív tranzakció.
+2. Az összes olyan adatbáziselem kiírása lemezre, melyeket olyan tranzakciók
+   írtak pufferekbe, melyek a START CKPT naplóba írásakor már befejeződtek, de
+   puffereik lemezre még nem kerültek.
+3. <END CKPT> bejegyzés naplóba írása, és a napló lemezre írása
 
 ## 176. Adjuk meg az UNDO/REDO naplózás esetén az UR1 szabályt! (2 pont)
 
@@ -1207,7 +1214,7 @@ UR1: Mielőtt az adatbázis bármely X elemének értékét - valamely T tranzak
     elemének korábbi v értékét w-re módosította.
 - UR1: Mielőtt az adatbázis bármely X elemének értékét - valamely T tranzakció
   által végzett módosítás miatt - a lemezen módosítanánk, ezt megelőzően a
-  <T,X,v,w> naplóbejegyzésnek lemezre kell kerülnie.l
+  <T,X,v,w> naplóbejegyzésnek lemezre kell kerülnie.
 - WAL - Write After Log elv: előbb napózunk, utána módosítunk
 - NAGYOBB SZABADSÁG: A <T, COMMIT> bejegyzés megelőzheti, de követheti is az
   adatbáziselemek lemezen történő bármilyen megváltoztatását.
