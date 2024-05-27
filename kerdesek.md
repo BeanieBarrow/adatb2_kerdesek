@@ -1094,6 +1094,14 @@ OUTPUT(X): Az X adatbáziselemet tartalmazó puffer kimásolása lemezre.
     - write <Ti, abort> to log
 - Flush log
 
+Saját szavakkal: A naplóban visszafelé haladva minden T<sub>i</sub>
+tranzakciónál, amihez tartozik `<Ti, start>` naplóbejegyzés, de nem tartozik
+`<Ti, commit>` vagy `<Ti, abort>`, `Write(X, v)`, majd `Output(X)` műveletekkel
+visszaírjuk az adott X adatelemre a napló szerinti régi értékét. Miután
+visszaérünk minden megszakadt T<sub>i</sub> tranzakciónál a `<Ti, start>`
+bejegyzéshez, `<Ti, abort>`-ot írunk a naplóba, aztán `Flush log`-gal lemezre
+írunk, és ürítjük a naplót.
+
 ## 165. Adjunk meg a működés közbeni ellenőrzőpont képzésének lépéseit Undo naplózás esetén! (6 pont)
 
 1. <START CKPT(T1,...,Tk)> naplóbejegyzés készítése, majd lemezre írása (FLUSH
@@ -1105,10 +1113,10 @@ OUTPUT(X): Az X adatbáziselemet tartalmazó puffer kimásolása lemezre.
 
 ## 166. Ha UNDO naplózás utáni helyreállításkor előbb <ENDCKPT> naplóbejegyzéssel találkozunk, akkor meddig kell visszamenni a napló olvasásában? (2 pont)
 
-1. Ha előbb az <END CKPT> naplóbejegyzéssel találkozunk, akkor tudjuk, hogy az
-   összes még be nem fejezett tranzakcióra vonatkozó naplóbejegyzést a
-   legközelebbi korábbi <START CKPT(T1,...,Tk)> naplóbejegyzésig megtaláljuk.
-   Ott viszont megállhatunk, az annál korábbiakat akár el is dobhatjuk.
+Ha előbb az <END CKPT> naplóbejegyzéssel találkozunk, akkor tudjuk, hogy az
+összes még be nem fejezett tranzakcióra vonatkozó naplóbejegyzést a
+legközelebbi korábbi <START CKPT(T1,...,Tk)> naplóbejegyzésig megtaláljuk. Ott
+viszont megállhatunk, az annál korábbiakat akár el is dobhatjuk.
 
 ## 167. Ha UNDO naplózás utáni helyreállításkor előbb <STARTCKPT(T1,…,Tk)> naplóbejegyzéssel találkozunk, akkor meddig kell visszamenni a napló olvasásában? (2 pont)
 
@@ -1159,7 +1167,15 @@ COMMIT>-nak a lemezre kell kerülnie.
     - if Ti &in; S then
       - write(X, v)
       - output(X)
-- For each Ti &in; S, write <Ti, end> 
+- For each Ti &in; S, write <Ti, end>
+
+Saját szavakkal: minden tranzakciót, melyhez tartozik `<Ti, commit>`
+naplóbejegyzés, de nem tartozik `<Ti, end>`, begyűjtjük egy halmazba. Ezen a
+halmazon végigiterálva a régebbi bejegyzésektől az újabbakig minden, az adott
+T<sub>i</sub> tranzakcióhoz tartozó `<Ti, X, v>` naplóbejegyzésre `Write(X, v)`
+majd `Output(X)` műveletekkel még egyszer elvégezzük a módosításokat. Zárásképp
+minden, a halmzaban lévő T<sub>i</sub> tranzakcióra `<Ti, end>` bejegyzést
+írunk a naplóba, majd `Flush log`.
 
 ## 172. Mi jellemző a módosított REDO naplózásra? (8 pont)
 
