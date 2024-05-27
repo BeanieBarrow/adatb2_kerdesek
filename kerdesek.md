@@ -800,7 +800,7 @@ Az alábbi adatbázis műveletekhez szükséges a rendezés:
 
 - N<sub>R</sub> * (v - min(A, R)) / (max(A, R) - min(A, R))
 
-## 120. Hány sora van a &sigma;<sub>theta<sub>1</sub> &wedge; theta<sub>2</sub> &wedge; … &wedge; … &theta;<sub>n</sub></sub>(R) lekérdezés eredményének? (2 pont)
+## 120. Hány sora van a &sigma;<sub>&theta;<sub>1</sub> &wedge; &theta;<sub>2</sub> &wedge; … &wedge; … &theta;<sub>n</sub></sub>(R) lekérdezés eredményének? (2 pont)
 
 - Szorzódó valószínűségek
 - N<sub>R</sub> * [(S<sub>1</sub> / N<sub>R</sub>) * (S<sub>2</sub> / N<sub>R</sub>) * … * (S<sub>n</sub> / N<sub>R</sub>)]
