@@ -867,7 +867,19 @@ BestPlan(B,C,D,E) |X| A )
 
 ## 132. A Q(A,B) JOIN R(B,C) JOIN S(C,D) lekérdezésnek három kiértékelésénél milyen indexeket tételeztünk fel? (2 pont)
 
-_feltéve, hogy Q,R,S paraméterei megegyeznek, Q.B-re és S.C-re klaszterindexünk van_
+- Feltesszük, hogy `Q`, `R`, `S` paraméterei megegyeznek, `Q.B`-re és `S.C`-re
+  klaszterindexünk van.
+
+---
+
+## A további pár kérdésnél használt jelölések:
+
+- `T`: Sorok száma az alsó indexben lévő relációban
+- `B`: Az alsó indexben lévő reláció által foglalt tárméret blokkokban
+- `I`: Az alsó indexben lévő oszlop képmérete, azaz az oszlop lehetséges
+  értékeinek száma
+
+---
 
 ## 133. Az R(A,B) JOIN S(B,C) lekérdezés eredményében mennyi a sorok száma? (2 pont)
 
