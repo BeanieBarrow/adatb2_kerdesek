@@ -2,6 +2,9 @@
 
 ELTE IK BSc, Adatbázisok II. szóbeli vizsga kérdései kidolgozva.
 
+Természetesen fenntartjuk a lehetőséget, hogy a válaszaink nem
+100%-ban jók. Ennek tudatában használjátok a repot.
+
 ## Hogyan kapok ebből PDF-et, HTML-t vagy docx-et?
 
 Használd a [pandoc](https://pandoc.org/)-ot, telepítsd, ha nincs meg vagy görgess leljebb
