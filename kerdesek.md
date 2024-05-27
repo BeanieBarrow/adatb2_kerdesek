@@ -805,7 +805,7 @@ Az alábbi adatbázis műveletekhez szükséges a rendezés:
 - Szorzódó valószínűségek
 - N<sub>R</sub> * [(S<sub>1</sub> / N<sub>R</sub>) * (S<sub>2</sub> / N<sub>R</sub>) * … * (S<sub>n</sub> / N<sub>R</sub>)]
 
-## 121. Hány sora van a &sigma;<sub>&theta;<sub>1</sub> &vee; &theta;<sub>2</sub> &vee; … &vee; … &theta;<sub>n</sub></sub>(R)  lekérdezés eredményének? (2 pont)
+## 121. Hány sora van a &sigma;<sub>&theta;<sub>1</sub> &vee; &theta;<sub>2</sub> &vee; … &vee; &theta;<sub>n</sub></sub>(R)  lekérdezés eredményének? (2 pont)
 
 - N<sub>R</sub> * (1 - [(1 - S<sub>1</sub> / N<sub>R</sub>) * (1 - S<sub>2</sub> / N<sub>R</sub>) * … * (1 - S<sub>n</sub> / N<sub>R</sub>)])
 
