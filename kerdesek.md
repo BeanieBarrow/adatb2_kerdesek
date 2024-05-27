@@ -707,9 +707,6 @@ Az alábbi adatbázis műveletekhez szükséges a rendezés:
 - Ahol B<sub>R</sub> az `R` reláció lapjainak száma, `M` az `R` relációból a memóriába
   olvasott lapok száma
 
-http://people.inf.elte.hu/kiss/15ab2/optimization-hu.ppt  22. oldal, 3.1. pont,
-de a betűk magyarázata is kell
-
 ## 105. Külső összefésülő rendezésnél mennyi az összes menetek száma? (2 pont)
 
 - |log<sub>M-1</sub>(B<sub>R</sub> / M)|
