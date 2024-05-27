@@ -734,11 +734,11 @@ de a betűk magyarázata is kell
 
 ## 109. Soroljuk fel az összekapcsolás 5 megvalósítását! (5 pont)
 
-- Skatulyázott ciklusos (nested loop) összekapcsolás
-- Blokk-skatulyázott ciklusos (block-nested loop) összekapcsolás
-- Indexelt skatulyázott ciklusos összekapcsolás
-- Összefésüléses rendező összekapcsolás
-- Hasításos összekapcsolás
+- Skatulyázott ciklusos (_nested loop_) összekapcsolás
+- Blokk-skatulyázott ciklusos (_block-nested loop_) összekapcsolás
+- Indexelt skatulyázott ciklusos (_index-nested loop_) összekapcsolás
+- Összefésüléses rendező (_sort-merge_) összekapcsolás
+- Hasításos (_hash_) összekapcsolás
 
 ## 110. Skatulyázott (NestedLoop) összekapcsolásnál mennyi a költség legjobb esetben? (3 pont)
 
