@@ -820,7 +820,7 @@ Az alábbi adatbázis műveletekhez szükséges a rendezés:
 
 ## 124. Hány sora van az R |X| S lekérdezés eredményének, ha R &cap; S kulcs R-en? (2 pont)
 
-- A kimenet maximális mérete `N<sub>S`
+- A kimenet maximális mérete N<sub>S</sub>
 
 ## 125. Hány sora van az R |X| S lekérdezés eredményének, ha R &cap; S idegen kulcs R-hez? (2 pont)
 
