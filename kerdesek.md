@@ -865,6 +865,8 @@ BestPlan(B,C,D,E) |X| A )
 2. balról jobbra és a memóriában összekapcsolva a harmadik táblával
 3. a középső ténytábla soraihoz kapcsolva a szélső dimenziótáblákat.
 
+- A fentiek közül a 3. volt a leghatékonyabb.
+
 ## 132. A Q(A,B) JOIN R(B,C) JOIN S(C,D) lekérdezésnek három kiértékelésénél milyen indexeket tételeztünk fel? (2 pont)
 
 - Feltesszük, hogy `Q`, `R`, `S` paraméterei megegyeznek, `Q.B`-re és `S.C`-re
