@@ -1566,9 +1566,11 @@ Az inci(X) művelet:
 
 ![229. kérdés, konkurencia.ppt, 83. dia](./images/229.png)
 
-A várakozási bit (waiting bit) azt adja meg, hogy van‑e legalább egy tranzakció, amely az A zárolására várakozik.
+A várakozási bit (waiting bit) azt adja meg, hogy van‑e legalább egy
+tranzakció, amely az A zárolására várakozik.
 
-Az összes olyan tranzakciót leíró lista, amelyek vagy jelenleg zárolják A‑t, vagy A zárolására várakoznak. 
+Az összes olyan tranzakciót leíró lista, amelyek vagy jelenleg zárolják A‑t,
+vagy A zárolására várakoznak. 
 
 ## 230. A zárfeloldások sorrendje milyen elvek alapján történhet? (3 pont)
 
@@ -1578,22 +1580,24 @@ Az összes olyan tranzakciót leíró lista, amelyek vagy jelenleg zárolják A�
 
 ## 231. Hierarchikus adatok esetén mi a figyelmeztető zárak használatának három alapelve? (3 pont)
 
-- A kért zárnak megfelelő figyelmeztető zárakat kérünk az útvonal mentén a gyökérből kiindulva az adatelemig.
+- A kért zárnak megfelelő figyelmeztető zárakat kérünk az útvonal mentén a
+  gyökérből kiindulva az adatelemig.
 - Addig nem megyünk lejjebb, amíg a figyelmeztető zárat meg nem kapjuk.
 - Így a konfliktusos helyzetek alsóbb szintekre kerülnek a fában.
 
-## 232. Hierarchikus adatok esetén adjuk meg az osztott, kizárólagos és figyelmeztető zárakra vonatkozó kompatibilitási mátrixot? (4 pont)
+## 232. Hierarchikus adatok esetén adjuk meg az osztott, kizárólagos és figyelmeztető zárakra vonatkozó kompatibilitási mátrixot? (5 pont)
 
-- `IS < IX` és `S < X`, de `IX` és `S` nem összehasonlítható (< csak parciális rendezés).
+- `IS < IX` és `S < X`, de `IX` és `S` nem összehasonlítható (< csak parciális
+  rendezés).
 - A csoportos mód használatához vezessünk be egy `SIX` új zárat, (ami azt
   jelenti, hogy ugyanaz a tranzakció `S` és `IX` zárat is tett egy adatelemre).
   Ekkor `SIX` mindkettőnél erősebb, de ez a legkisebb ilyen.
 
 ## 233. Hierarchikus adatok esetén miért vezetjük be az SIX zártípust és mi jellemző rá? (4 pont)
 
-**TODO**
+![233. kérdés, konkurencia.ppt, 100. dia](./images/232-233.png)
 
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 100. oldal 2. és 3. pont. (előző kérdés válasza?)
+Ez a dia érvényes az előző (232.) kérdésre is.
 
 ## 234. Adjuk meg a csoportos móddal kiegészített figyelmeztető zárakra vonatkozó kompatibilitási mátrixot! (5 pont)
 
