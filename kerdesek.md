@@ -1590,10 +1590,12 @@ Az inci(X) művelet:
 
 - A Ti tranzakció megnöveli az X adatbáziselemet valamely konstanssal.
   (Annak, hogy pontosan mennyi ez a konstans, nincs jelentősége.)
-- S X I
-- S igen nem nem
-- X nem nem nem
-- I nem nem igen
+
+||S|X|I|
+|:--:|:--:|:--:|:--:|
+|S|igen|nem|nem|
+|X|nem|nem|nem|
+|I|nem|nem|igen|
 
 ## 229. Adjunk meg a zártábla egy lehetséges formáját, a mezők tartalmát magyarázzuk is el! (8 pont)
 
