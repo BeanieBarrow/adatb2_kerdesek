@@ -1564,10 +1564,6 @@ felrajzolt megelőzési gráf nem tartalmaz irányított kört.
 - Mivel tartalmaz irányított kört a megelőzési gráf, ezért elvetné az ütemező
   - Nem lesz sorbarendezhető az az ütemezés, amiben már csak a zárak vannak benne
 
-http://people.inf.elte.hu/kiss/15ab2/konkurencia.ppt 65. oldal példája,
-valamint a kék mondata, a megelőzési gráf felrajzolása és „mivel tartalmaz
-irányított kört a megelőzési gráf, ezért elvetné az ütemező”.
-
 ## 225. Adjunk feltételt az ütemezés sorbarendezhetőségére tetszőleges zármodellben! (4 pont)
 
 Ha valamilyen zármodellben egy jogszerű ütemezésben minden tranzakció követi a
