@@ -1397,15 +1397,15 @@ műveleteket végrehajtó tranzakcióknak ugyanabban a sorrendben kell
 előfordulniuk a konfliktus-ekvivalens soros ütemezésekben, mint ahogyan az
 S-ben voltak.
 
-## 202. Mikor mondjuk, hogy egy S ütemezés alapján T1 megelőzi T2-t? (5 pont)
+## 202. Mikor mondjuk, hogy egy S ütemezés alapján T<sub>1</sub> megelőzi T<sub>2</sub>-t? (5 pont)
 
-Adott a T1 és T2, esetleg további tranzakcióknak egy S ütemezése. Azt mondjuk,
-hogy T1 megelőzi T2‑t, ha van a T1-ben olyan A1 művelet és a T2-ben olyan A2
+Adott a T<sub>1</sub> és T<sub>2</sub>, esetleg további tranzakcióknak egy S ütemezése. Azt mondjuk,
+hogy T<sub>1</sub> megelőzi T<sub>2</sub>‑t, ha van a T<sub>1</sub>-ben olyan A<sub>1</sub> művelet és a T<sub>2</sub>-ben olyan A<sub>2</sub>
 művelet, hogy:
 
-1. A1 megelőzi A2-t S-ben,
-2. A1 és A2 ugyanarra az adatbáziselemre vonatkoznak, és
-3. A1 és A2 közül legalább az egyik írás művelet. (számok alsó indexben)
+1. A<sub>1</sub> megelőzi A<sub>2</sub>-t S-ben,
+2. A<sub>1</sub> és A<sub>2</sub> ugyanarra az adatbáziselemre vonatkoznak, és
+3. A<sub>1</sub> és A<sub>2</sub> közül legalább az egyik írás művelet.
 
 ## 203. Adjuk meg egy S ütemezéshez tartozó megelőzési gráf definícióját! (5 pont)
 
