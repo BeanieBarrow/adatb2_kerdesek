@@ -1494,8 +1494,8 @@ Aktív módszer: az ütemező beavatkozik, és megakadályozza, hogy kör alakul
 ## 215. Mi a várakozási gráf és hogyan segít a holtpont felismerésében? (4 pont)
 
 A felismerésben segít a zárkérések sorozatához tartozó várakozási gráf: csúcsai
-a tranzakciók és akkor van él Ti-ből Tj-be, ha Ti vár egy olyan zár
-elengedésére, amit Tj tart éppen. (j alsó indexben van)
+a tranzakciók és akkor van él T<sub>i</sub>-ből T<sub>j</sub>-be, ha T<sub>i</sub> vár egy olyan zár
+elengedésére, amit T<sub>j</sub> tart éppen.
 
 ## 216. Milyen két lehetőséggel védekezhetünk a holtpont ellen? (4 pont)
 
