@@ -45,3 +45,14 @@ pandoc --pdf-engine=xelatex -V "mainfont:DejaVu Sans" -V "monofont:DejaVu Sans M
 ```bash
 pandoc kerdesek.md -o kerdesek.docx
 ```
+
+## Kikérdezés
+
+Ha [Fish shellt](https://fishshell.com/) használsz (a `random` függvényhez
+kell, szabadon átírható bash-re is, csak lusta vagyok), akkor ezzel a kétsoros
+paranccsal kaphatsz egy véletlenszerű kérdést:
+
+```bash
+set random_line (random 1 248)
+echo $random_line | grep "## $random_line." -m 1 kerdesek.md
+```
