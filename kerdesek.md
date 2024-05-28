@@ -1497,6 +1497,9 @@ A felismerésben segít a zárkérések sorozatához tartozó várakozási gráf
 a tranzakciók és akkor van él T<sub>i</sub>-ből T<sub>j</sub>-be, ha T<sub>i</sub> vár egy olyan zár
 elengedésére, amit T<sub>j</sub> tart éppen.
 
+Ha ebben a gráfban irányított kör van,
+akkor kialakult egy holtpont.
+
 ## 216. Milyen két lehetőséggel védekezhetünk a holtpont ellen? (4 pont)
 
 1. Minden egyes tranzakció előre elkéri az összes zárat, ami neki kelleni fog.
