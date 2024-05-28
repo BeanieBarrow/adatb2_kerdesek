@@ -1347,9 +1347,9 @@ Várakoztat, abortot rendel el, hogy a sorbarendezhetőséget biztosítsa.
 
 ## 194. Milyen 3 esetben nem cserélhetjük fel a műveletek sorrendjét, mert inkonzisztenciát okozhatna? (3 pont)
 
-1. ri(X); wi(Y) konfliktus,
-2. wi(X); wj(X) konfliktus,
-3. ri(X); wj(X) és wi(X); rj(X) is konfliktus (i, j alsóindexben)
+1. r<sub>i</sub>(X); w<sub>i</sub>(Y) konfliktus,
+2. w<sub>i</sub>(X); w<sub>j</sub>(X) konfliktus,
+3. r<sub>i</sub>(X); w<sub>j</sub>(X) és w<sub>i</sub>(X); r<sub>j</sub>(X) is konfliktus
 
 ## 195. Mikor konfliktus-ekvivalens 2 ütemezés? (2 pont)
 
