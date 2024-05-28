@@ -1691,8 +1691,13 @@ Ha minden tranzakció követi a faprotokollt egy jogszerű ütemezésben, akkor 
 
 ## 241. Milyen olvasási konzisztenciát biztosít az Oracle és mivel éri ezt el? (3 pont)
 
-- Utasítás szintű olvasási konzisztenciának
+- Utasítás szintű olvasási konzisztencia
+  - A lekérdezés által olvasott adatok egy időpillanatból (a lekérdezés
+    kezdetének pillanatából) származnak
 - Tranzakció szintű olvasási konzisztencia.
+  - A tranzakciót sorbarendezhető vagy csak olvasás módban futtatjuk
+- Ezeknek az eléréséhez az Oracle a rollback szegmensekben található
+  információkat használja fel.
 
 ## 242. Adjuk meg az SQL92 ANSI/ISO szabványbanszereplő tranzakciós elkülönítési szinteket! (4 pont)
 
