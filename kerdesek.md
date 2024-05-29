@@ -1557,7 +1557,7 @@ felrajzolt megelőzési gráf nem tartalmaz irányított kört.
 - l1(A); r1(A); u1(A); l2(A); r2(A); u2(A); l1(A); w1(A); u1(A); l2(B); r2(B); u2(B)
 - Ha megnézzük az írás/olvasás műveleteket (r1(A); r2(A); w1(A); r2(B)), akkor látszik, hogy az ütemezés hatása azonos a T2T1 soros ütemezés hatásával, vagyis ez egy
   sorbarendezhető ütemezés zárak nélkül
-- Megelőzési gráf:
+- Zárakra vonatkozó megelőzési gráf:
 
 ![224. kérdés, konkurencia.ppt, 65. dia](./images/224.png)
 
