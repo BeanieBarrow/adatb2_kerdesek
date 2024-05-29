@@ -1540,7 +1540,7 @@ Konzisztens 2PL tranzakciók jogszerű ütemezése konfliktus-sorbarendezhető.
 
 ## 222. Többmódú zárak kompatibilitási mátrixa segítségével hogyan definiáljuk a megelőzési gráfot? (5 pont)
 
-- A megelőzési gráf csúcsai a tranzakciók és akkor van él T<sub>i</sub>-ből T<sub>i</sub>-be, ha van
+- A megelőzési gráf csúcsai a tranzakciók és akkor van él T<sub>i</sub>-ből T<sub>j</sub>-be, ha van
   olyan A adategység, amelyre az ütemezés során Z<sub>k</sub> zárat kért és kapott T<sub>i</sub>,
   ezt elengedte, majd:
 - Ezután A-ra legközelebb T<sub>j</sub> kért és kapott olyan Z<sub>l</sub> zárat, hogy a mátrixban a
