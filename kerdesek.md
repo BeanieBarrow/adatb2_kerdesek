@@ -1108,21 +1108,21 @@ bejegyzéshez, `<Ti, abort>`-ot írunk a naplóba, aztán `Flush log`-gal lemezr
    LOG), ahol T1,...,Tk az éppen aktív tranzakciók nevei.
 2. Meg kell várni a T1,...,Tk tranzakciók mindegyikének normális vagy
    abnormális befejeződését, nem tiltva közben újabb tranzakciók indítását.
-3. Ha a T1,...,Tk tranzakciók mindegyike befejeződött, akkor <END CKPT>
+3. Ha a T1,...,Tk tranzakciók mindegyike befejeződött, akkor `<END CKPT>`
    naplóbejegyzés elkészítése, majd lemezre írása (FLUSH LOG).
 
-## 166. Ha UNDO naplózás utáni helyreállításkor előbb <ENDCKPT> naplóbejegyzéssel találkozunk, akkor meddig kell visszamenni a napló olvasásában? (2 pont)
+## 166. Ha UNDO naplózás utáni helyreállításkor előbb `<ENDCKPT>` naplóbejegyzéssel találkozunk, akkor meddig kell visszamenni a napló olvasásában? (2 pont)
 
-Ha előbb az <END CKPT> naplóbejegyzéssel találkozunk, akkor tudjuk, hogy az
+Ha előbb az `<END CKPT>` naplóbejegyzéssel találkozunk, akkor tudjuk, hogy az
 összes még be nem fejezett tranzakcióra vonatkozó naplóbejegyzést a
-legközelebbi korábbi <START CKPT(T1,...,Tk)> naplóbejegyzésig megtaláljuk. Ott
+legközelebbi korábbi `<START CKPT(T1,...,Tk)>` naplóbejegyzésig megtaláljuk. Ott
 viszont megállhatunk, az annál korábbiakat akár el is dobhatjuk.
 
-## 167. Ha UNDO naplózás utáni helyreállításkor előbb <STARTCKPT(T1,…,Tk)> naplóbejegyzéssel találkozunk, akkor meddig kell visszamenni a napló olvasásában? (2 pont)
+## 167. Ha UNDO naplózás utáni helyreállításkor előbb `<STARTCKPT(T1,…,Tk)>` naplóbejegyzéssel találkozunk, akkor meddig kell visszamenni a napló olvasásában? (2 pont)
 
-- Ha a <START CKPT(T1,...,Tk)> naplóbejegyzéssel találkozunk előbb, az azt
+- Ha a `<START CKPT(T1,...,Tk)>` naplóbejegyzéssel találkozunk előbb, az azt
   jelenti, hogy a katasztrófa az ellenőrzőpont-képzés közben fordult elő, ezért
-  a T1,...,Tk tranzakciók nem fejeződtek be a hiba fellépéséig.
+  a `T1, ..., Tk` tranzakciók nem fejeződtek be a hiba fellépéséig.
 - Ekkor a be nem fejezett tranzakciók közül a legkorábban (t) kezdődött
   tranzakció indulásáig kell a naplóban visszakeresnünk, annál korábbra nem.
 
