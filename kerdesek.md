@@ -1209,16 +1209,9 @@ módosításokat tárol.
 
 ## 176. Adjuk meg az UNDO/REDO naplózás esetén az UR1 szabályt! (2 pont)
 
-- A naplóbejegyzés négykomponensű:
-  - a <T,X,v,w> naplóbejegyzés azt jelenti, hogy a T tranzakció az adatbázis X
-    elemének korábbi v értékét w-re módosította.
 - UR1: Mielőtt az adatbázis bármely X elemének értékét - valamely T tranzakció
   által végzett módosítás miatt - a lemezen módosítanánk, ezt megelőzően a
   <T,X,v,w> naplóbejegyzésnek lemezre kell kerülnie.
-- WAL - Write After Log elv: előbb napózunk, utána módosítunk
-- NAGYOBB SZABADSÁG: A <T, COMMIT> bejegyzés megelőzheti, de követheti is az
-  adatbáziselemek lemezen történő bármilyen megváltoztatását.
-- NAGYOBB MÉRETŰ NAPLÓ: - régi és új értéket is tároljuk
 
 ## 177. Adjuk meg az UNDO/REDO naplózás esetén a WAL elvet! (2 pont)
 
