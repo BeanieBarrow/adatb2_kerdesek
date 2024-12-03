@@ -1,4 +1,4 @@
-# adatb2_kerdesek
+# Adatbázisok II. kérdések
 
 ELTE IK BSc, Adatbázisok II. szóbeli vizsga kérdései kidolgozva.
 
@@ -7,7 +7,7 @@ Természetesen fenntartjuk a lehetőséget, hogy a válaszaink nem
 
 ## Hogyan kapok ebből PDF-et, HTML-t vagy docx-et?
 
-Használd a [pandoc](https://pandoc.org/)ot, telepítsd, ha nincs meg:
+Használd a [pandoc](https://pandoc.org/) programot. Telepítsd, ha nincs meg:
 
 ### Pandoc telepítés (Windows):
 
@@ -56,3 +56,15 @@ paranccsal kaphatsz egy véletlenszerű kérdést:
 set random_line (random 1 248)
 echo $random_line | grep "## $random_line." -m 1 kerdesek.md
 ```
+
+## „Megváltoztak azóta a vizsgakérdések.”
+
+A repo a 2023/2024/II. félévben készült. Benne van a pakliban, hogy megváltozott a kérdéssor.
+
+Ha ilyen történt, akkor az itt lévő `Ellenorzokerdesek.docx` fájlt cseréljétek ki a commitotokban az éppen aktuális kérdéssorra, légyszi.
+
+Jó kérdés, mi van akkor, ha lettek új kérdések a vizsgán, de a régiekből is eltűnt pár. Töröljük a régieket? Írjuk felül az eddigieket? A válasz az, hogy nem tudom, majd az adott pull request alatt megbeszéljük. :D
+
+Elvileg bárki nyithat pull requestet itt, ezek belátható időn belül el lesznek fogadva.
+
+Köszi a segítségetek! Sok sikert a vizsgához.
