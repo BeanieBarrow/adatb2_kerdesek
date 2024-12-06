@@ -48,6 +48,8 @@ pandoc kerdesek.md -o kerdesek.docx
 
 ## Kikérdezés
 
+### Shellből egy véletlen kérdés
+
 Ha [Fish shellt](https://fishshell.com/) használsz (a `random` függvényhez
 kell, szabadon átírható bash-re is, csak lusta vagyok), akkor ezzel a kétsoros
 paranccsal kaphatsz egy véletlenszerű kérdést:
@@ -56,6 +58,13 @@ paranccsal kaphatsz egy véletlenszerű kérdést:
 set random_line (random 1 248)
 echo $random_line | grep "## $random_line." -m 1 kerdesek.md
 ```
+
+### Flashkártyák
+
+Egy modern flashkártyás megoldást [Attila121](https://github.com/Attila121) írt.
+A repo megtalálható itt: [https://github.com/Attila121/Adatbazisok2_flash_cards](https://github.com/Attila121/Adatbazisok2_flash_cards).
+
+Ezen az oldalon kipróbálható: [https://attila121.github.io/Adatbazisok2_flash_cards/](https://attila121.github.io/Adatbazisok2_flash_cards/)
 
 ## „Megváltoztak azóta a vizsgakérdések.”
 
